@@ -1,10 +1,9 @@
-
 "use client";
 import { useEffect, useRef } from "react";
 import Link from "next/link";
 import { useTheme } from "next-themes";
-import { RoughNotation } from "react-rough-notation";
-import { MdxMeta } from "@/types/mxd"; // Import global MdxMeta
+import { motion } from "framer-motion"; // ✅ Added
+import { MdxMeta } from "@/types/mxd";
 import { useSection } from "../context/section";
 import useOnScreen from "@/hooks/useOnScreen";
 import useScrollActive from "@/hooks/useScrollActive";
@@ -16,7 +15,27 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 type Props = {
-  posts: MdxMeta[]; // Use global MdxMeta
+  posts: MdxMeta[];
+};
+
+// ✅ Reusable animated underline
+const MotionUnderline: React.FC<{
+  active: boolean;
+  color: string;
+  children: React.ReactNode;
+}> = ({ active, color, children }) => {
+  return (
+    <span className="relative inline-block">
+      <span className="relative z-10 inline-block pb-1">{children}</span>
+      <motion.span
+        initial={{ width: "0%" }}
+        animate={{ width: active ? "100%" : "0%" }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
+        className="absolute left-0 bottom-0 h-[3px]"
+        style={{ background: color }}
+      />
+    </span>
+  );
 };
 
 const BlogSection: React.FC<Props> = ({ posts }) => {
@@ -33,23 +52,25 @@ const BlogSection: React.FC<Props> = ({ posts }) => {
     }
   }, [blogSection, onSectionChange]);
 
+  const highlightColor = theme === "light" ? "rgb(0, 122, 122)" : "rgb(5 206 145)";
+
   return (
     <div className="bg-[#F5F5F5] dark:bg-[#1B2731]">
       <section ref={sectionRef} id="blog" className="section md:px-10">
         <div className="text-center">
-          <RoughNotation
-            type="underline"
-            color={theme === "light" ? "rgb(0, 122, 122)" : "rgb(5 206 145)"}
-            strokeWidth={2}
-            order={1}
-            show={isOnScreen}
-          >
+          {/* ✅ RoughNotation replaced */}
+          <MotionUnderline active={isOnScreen} color={highlightColor}>
             <h2 className="section-heading">Blog</h2>
-          </RoughNotation>
+          </MotionUnderline>
         </div>
+
         <div className="text-center mb-8" ref={elementRef}>
-          On my blog, I share practical insights and personal experiences about building scalable web applications and intelligent automation systems. I often write about Next.js, TypeScript, Python, OpenAI SDK, and n8n — blending modern development with AI-powered workflows.
+          On my blog, I share practical insights and personal experiences about
+          building scalable web applications and intelligent automation systems.
+          I often write about Next.js, TypeScript, Python, OpenAI SDK, and n8n —
+          blending modern development with AI-powered workflows.
         </div>
+
         <div>
           <Swiper
             modules={[Navigation, Pagination]}
@@ -87,6 +108,7 @@ const BlogSection: React.FC<Props> = ({ posts }) => {
               </SwiperSlide>
             ))}
           </Swiper>
+
           <div className="mt-4 text-center">
             <Link href="/blog" className="link">
               Saare blog posts parhein{" "}

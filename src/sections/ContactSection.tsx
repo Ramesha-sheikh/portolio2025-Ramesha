@@ -1,11 +1,33 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
-import { RoughNotation } from "react-rough-notation";
+import { motion } from "framer-motion";
 import { useTheme } from "next-themes";
 
 import { useSection } from "../context/section";
 import useOnScreen from "@/hooks/useOnScreen";
 import useScrollActive from "@/hooks/useScrollActive";
+
+const MotionUnderline: React.FC<{
+  active: boolean;
+  color: string;
+  children: React.ReactNode;
+}> = ({ active, color, children }) => {
+  return (
+    <span className="relative inline-block">
+      {/* text */}
+      <span className="relative z-10 inline-block pb-1">{children}</span>
+
+      {/* animated underline */}
+      <motion.span
+        initial={{ width: "0%" }}
+        animate={{ width: active ? "100%" : "0%" }}
+        transition={{ duration: 0.6, ease: "easeInOut" }}
+        className="absolute left-0 bottom-0 h-[3px]"
+        style={{ background: color }}
+      />
+    </span>
+  );
+};
 
 const ContactSection: React.FC = () => {
   const { theme } = useTheme();
@@ -49,9 +71,11 @@ const ContactSection: React.FC = () => {
 
   useEffect(() => {
     if (contactSection) {
-  onSectionChange!("contact");
-}
+      onSectionChange!("contact");
+    }
   }, [contactSection, onSectionChange]);
+
+  const highlightColor = theme === "light" ? "rgb(0, 122, 122)" : "rgb(5 206 145)";
 
   return (
     <section
@@ -60,20 +84,16 @@ const ContactSection: React.FC = () => {
       className="section min-h-[700px] text-center"
     >
       <div className="text-center">
-        <RoughNotation
-          type="underline"
-          color={`${theme === "light" ? "rgb(0, 122, 122)" : "rgb(5 206 145)"}`}
-          strokeWidth={2}
-          order={1}
-          show={isOnScreen}
-        >
+        <MotionUnderline active={isOnScreen} color={highlightColor}>
           <h2 className="text-2xl inline-block my-6 font-medium">Contact</h2>
-        </RoughNotation>
+        </MotionUnderline>
       </div>
+
       <div className="mt-8 mb-20">
         <h3 className="font-medium text-lg mb-2 md:text-3xl" ref={elementRef}>
           Let&apos;s be awesome together!
         </h3>
+
         <p className="mb-6 mx-auto max-w-lg md:mb-10 lg:leading-loose">
           As a dev, I am driven by my love for coding and my desire for new
           challenges. If you have opportunities for collaboration or want to
