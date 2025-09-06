@@ -109,9 +109,7 @@ const HeroSection: React.FC = () => {
           </p>
         </div>
         <div className="flex gap-4">
-          <LinkButton href={`mailto:${process.env.NEXT_PUBLIC_EMAIL}`}>
-            Contact me!
-          </LinkButton>
+          
           <LinkButton href="https://new-cv-theta.vercel.app/">
             View CV
           </LinkButton>
