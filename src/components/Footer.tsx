@@ -38,7 +38,7 @@ const Footer: React.FC<Props> = ({ noPadding = false }) => {
             d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
           />
         </svg>{" "}
-        by <span className="font-semibold">Humaiza Naz</span>
+        by <span className="font-semibold">Ramesha Javed</span>
       </div>
     </footer>
   );
@@ -66,8 +66,8 @@ const socialLinks = [
   },
   {
     id: 2,
-    title: "Humaiza's LinkedIn Profile",
-    link: "https://www.linkedin.com/in/humaiza-naz/",
+    title: "Ramesha's LinkedIn Profile",
+    link: "https://www.linkedin.com/in/rameesha20/",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -81,24 +81,28 @@ const socialLinks = [
     ),
   },
   {
-    id: 3,
-    title: "Humaiza's YouTube Channel",
-    link: "https://www.youtube.com/@knowhowcoding",
-    svg: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        className="dark:fill-bglight hover:fill-marrsgreen dark:hover:fill-carrigreen"
-      >
-        <path d="M10 15l5.19-3L10 9v6zm12-3c0-2.5-.2-4.1-.5-5.2-.3-1-1-1.7-2-2-1.1-.3-2.8-.5-5.5-.5H10c-2.7 0-4.4.2-5.5.5-1 .3-1.7 1-2 2C2 7.9 2 9.5 2 12s.2 4.1.5 5.2c.3 1 1 1.7 2 2 1.1.3 2.8.5 5.5.5h4c2.7 0 4.4-.2 5.5-.5 1-.3 1.7-1 2-2 .3-1.1.5-2.7.5-5.2z" />
-      </svg>
-    ),
-  },
+  id: 3,
+  title: "Ramesha's Instagram",
+  link: "https://www.instagram.com/ramesha.javed.2025?igsh=YzljYTk1ODg3Zg==",
+  svg: (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      className="dark:fill-bglight hover:fill-marrsgreen dark:hover:fill-carrigreen"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6.5A4.5 4.5 0 1 0 16.5 13 4.5 4.5 0 0 0 12 8.5zm6.8-3.4a1.2 1.2 0 1 1-1.2 1.2 1.2 1.2 0 0 1 1.2-1.2z" />
+    </svg>
+  ),
+},
+
   {
     id: 4,
-    title: "Humaiza's Facebook Profile",
-    link: "https://www.facebook.com/profile.php?id=61567726929622",
+    title: "Ramesha's Facebook Profile",
+    link: "https://www.facebook.com/ramesha.javed.2025/",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

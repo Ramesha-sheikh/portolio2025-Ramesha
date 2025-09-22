@@ -65,7 +65,7 @@ const Header: React.FC = () => {
             href="/"
             className="text-xl sm:text-2xl font-bold tracking-wide md:hover:text-marrsgreen dark:md:hover:text-carrigreen"
           >
-            Humaiza Naz
+            Ramesha
             <span className="text-marrsgreen dark:text-carrigreen">.dev</span>
           </Link>
 

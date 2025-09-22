@@ -84,13 +84,13 @@ const AboutSection: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
-            I&apos;m a skilled full-stack developer with over 4 years of
-            experience in HTML, CSS, TypeScript, Next.js, Node.js, and React.
-            Since February 2024, I&apos;ve been advancing my skills at GIAIC
-            and PIAIC, focusing on Agentic AI and n8n. My projects, including
-            e-commerce platforms and intelligent chatbots, showcase scalable,
-            innovative solutions blending full-stack development with AI
-            technologies.
+           
+            I&apos;m a skilled full-stack developer with 4+ years of experience in HTML, CSS,
+             TypeScript, Next.js, Node.js, and React.
+             Since February 2024, I&apos;ve been enhancing my expertise at GIAIC and PIAIC, 
+         focusing on Agentic AI and workflow automation with n8n. My work spans from
+           e-commerce platforms to AI-driven chatbots, delivering scalable and innovative
+      solutions that bridge full-stack development with advanced AI technologies.
           </motion.p>
 
           {/* Education */}
@@ -117,35 +117,27 @@ const AboutSection: React.FC = () => {
 const educationInfo = [
   {
     id: 1,
-    title: "Full-Stack Developer in GIAIC & PIAIC",
-    subTitle: "Feb 2024 - Dec 2024",
-    list: [
-      "Mastered HTML, CSS, TypeScript, Next.js, Node.js, and React, building responsive web apps.",
-    ],
+    title: "Bachelor's Degree",
+    subTitle: "University of Karachi | 2019 - 2022",
+    list: ["Graduated in Computer Science"],
   },
   {
     id: 2,
-    title: "DHMS (Diploma in Homeopathic Medical Science)",
-    subTitle: "2020",
-    list: [
-      "Completed Diploma in Homeopathic Medical Science",
-      "Studied principles of homeopathy and medical practices",
-    ],
+    title: "Diploma in Information Technology",
+    subTitle: "DIT Form, Korean Computer Academy | 2022",
+    list: ["Completed Diploma in IT"],
   },
   {
     id: 3,
-    title: "Full-Stack Developer Trainee",
-    subTitle: "GIAIC | Feb 2024 - Dec 2024",
-    list: [
-      "Mastered HTML, CSS, TypeScript, Next.js, Node.js, and React",
-      "Built responsive web applications",
-    ],
+    title: "Governor House AI Initiative",
+    subTitle: "Governor House, Sindh, Karachi | Quarter 4 Agentic AI",
+    list: ["Participated in AI-focused initiatives"],
   },
   {
     id: 4,
-    title: "AI Developer Trainee",
-    subTitle: "GIAIC & PIAIC | Feb 2025 - Present",
-    list: ["Training in Python and Agentic AI", "Developing autonomous AI agents"],
+    title: "PIAIC - Presidential Initiative for AI & Computing",
+    subTitle: "Quarter 3 (Agentic AI) | Current",
+    list: ["Learning Agentic AI, n8n automation, and full-stack development"],
   },
 ];
 

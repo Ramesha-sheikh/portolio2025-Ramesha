@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import LinkButton from "../components/LinkButton";
 
-import humo from "../public/11.png";
+import rum from "../public/rum.png";
 
 const HeroSection: React.FC = () => {
   const sectionRef = useRef(null);
@@ -71,13 +71,13 @@ const HeroSection: React.FC = () => {
         <div className="relative w-72 md:w-80 h-80 flex items-center mx-auto">
           <div className="absolute pointer-events-none  sm:scale-95 mx-auto">
             <Image
-              src={humo}
+              src={rum}
               width={1250}
               height={1500}
               priority
               id="character-illustration"
-              aria-label="Humaiza Naz character illustration levitating with a Macbook"
-              alt="Humaiza Naz character illustration"
+              aria-label=" Ramesha javed character illustration levitating with a Macbook"
+              alt="Ramesha javed  character illustration"
             />
           </div>
         </div>
@@ -89,7 +89,7 @@ const HeroSection: React.FC = () => {
         </span>
         <div className="overflow-hidden">
           <h1 className="text-animation text-4xl md:text-5xl lg:text-7xl md:my-2 font-semibold my-1">
-            Humaiza Naz
+            Ramesha javed 
           </h1>
         </div>
         <div className="overflow-hidden">
@@ -102,10 +102,12 @@ const HeroSection: React.FC = () => {
             I specialize in building scalable web applications and intelligent automation systems.
           </p>
           <p>
-            With expertise in TypeScript, Next.js (on the frontend), Python & TypeScript (on the backend), OpenAI, and n8n, I create
-            responsive, user-focused interfaces and deploy autonomous AI agents to solve complex
-            challenges. I bring a unique combination of technical skills and creative problem-solving to
-            every project I work on.
+            I specialize in TypeScript and Next.js for the frontend, 
+            and Python and TypeScript for the backend. Leveraging OpenAI and n8n, 
+            design responsive, user-centered interfaces and deploy 
+            AI agents to tackle complex challenges.
+            My work blends strong technical expertise with creative 
+            problem-solving to deliver impactful solutions
           </p>
         </div>
         <div className="flex gap-4">

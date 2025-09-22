@@ -51,12 +51,13 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#5bbad5" />
       </head>
       <body
+        suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-bglight dark:bg-bgdark`}
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="light"
-          enableSystem={true}
+          defaultTheme="system"
+          enableSystem
           disableTransitionOnChange
         >
           <ProvideSection>{children}</ProvideSection>
