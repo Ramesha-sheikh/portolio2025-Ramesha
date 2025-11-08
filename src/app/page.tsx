@@ -16,12 +16,12 @@ import { MdxMeta } from "@/types/mxd"; // Import shared MdxMeta type
 
 const meta = {
   description:
-    "Humaiza Naz is a full-stack developer based in Yangon, Myanmar. She is passionate about writing codes and developing web applications to solve real-life challenges.",
-  author: "Humaiza Naz",
+    "Ramesha is a full-stack developer based in Yangon, Myanmar. She is passionate about writing codes and developing web applications to solve real-life challenges.",
+  author: "Ramesha Javed",
   type: "website",
   ogImage: `${process.env.NEXT_PUBLIC_URL}/favicons/mstile-150x150.png`,
-  siteName: "Humaiza Naz",
-  imageAlt: "Humaiza Naz portfolio website",
+  siteName: "Ramesha Javed",
+  imageAlt: "Ramesha portfolio website",
 };
 
 // Async server component
@@ -50,11 +50,11 @@ export default async function Home() {
   return (
     <>
       <AppHead
-        title="Humaiza Naz - A Full-stack Developer"
+        title="Ramesha - A Full-stack Developer"
         url={`${process.env.NEXT_PUBLIC_URL}`}
         meta={meta}
       />
-      <Loader>Humaiza Naz.dev</Loader>
+      <Loader>Ramesha.dev</Loader>
       <div className="bg-bglight dark:bg-bgdark overflow-hidden">
         <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
           <SkipToMain />

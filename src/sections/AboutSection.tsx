@@ -6,7 +6,7 @@ import { useTheme } from "next-themes";
 import { useSection } from "../context/section";
 import useOnScreen from "@/hooks/useOnScreen";
 import useScrollActive from "@/hooks/useScrollActive";
-import satNaing from "@/public/humo.png";
+import satNaing from "@/public/rmm.jpg";
 import AboutBgSvg from "@/components/AboutBgSvg";
 import EduGroup from "@/components/EduGroup";
 
@@ -69,7 +69,7 @@ const AboutSection: React.FC = () => {
                   width={1700}
                   height={1790}
                   priority
-                  alt="Sat Naing profile picture"
+                  alt="ramesha profile picture"
                   className="rounded-md"
                 />
               </div>
