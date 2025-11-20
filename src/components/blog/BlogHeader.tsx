@@ -37,7 +37,7 @@ const BlogHeader: React.FC = () => {
       >
         <div className="w-full h-full mx-auto max-w-6xl flex items-center justify-between">
           <Link href="/blog" className="relative text-xl sm:text-2xl">
-            HumaizaNaz
+            Ramesha Javed
             <span className="text-marrsgreen dark:text-carrigreen">.dev</span>
           </Link>
 
@@ -47,7 +47,8 @@ const BlogHeader: React.FC = () => {
                 {navLinks.map((navLink) => (
                   <li
                     key={navLink.url}
-                    className={`${navLink.text === "Home" ? "md:hidden" : ""}`}
+                     className={`${navLink.text === "Home" ? "md:hidden" : ""}`}
+
                   >
                     <Link
                       href={navLink.url}
@@ -157,4 +158,4 @@ const navLinks = [
   },
 ];
 
-export default BlogHeader;
+export default BlogHeader;

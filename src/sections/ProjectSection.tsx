@@ -9,16 +9,22 @@ import { useSection } from "../context/section";
 import useOnScreen from "@/hooks/useOnScreen";
 import useScrollActive from "@/hooks/useScrollActive";
 
-import gov from "@/public/nextjs/gov1.png";
+import gov from "../../public/nextjs/gov1.png";
 import bur from "@/public/nextjs/bur.png";
-import blog from "@/public/nextjs/blog.png";
+import blog from "../../public/nextjs/blog.png";
 
 
-import eco from "@/public/nextjs/eco.png";
-import jew from "@/public/nextjs/jew.png";
-import kk from "@/public/nextjs/kk.png";
-import port from "@/public/nextjs/prot.png";
-import tech from "@/public/nextjs/technology.png";
+import eco from "../../public/nextjs/eco.png";
+import jew from "../../public/nextjs/jew.png";
+import burger from "../../public/nextjs/burger.png";
+import port from "../../public/nextjs/prot.png";
+import tech from "../../public/nextjs/technology.png";
+import resume from "../../public/nextjs/python1.png";
+import BMI from "../../public/nextjs/python2.png";
+import Data from "../../public/nextjs/python3.png";
+import mindset from "../../public/nextjs/python4.png";
+import pass from "../../public/nextjs/python5.png";
+import lib from "../../public/nextjs/python6.png"
 
 const ProjectSection: React.FC = () => {
   const { theme } = useTheme();
@@ -39,7 +45,7 @@ const ProjectSection: React.FC = () => {
   }, [onSectionChange, projectSection]);
 
   // ✅ Fixed categories
-  const categories = ["All", "Next.js", "Python", "N8N Automation", "TypeScript"];
+  const categories = ["All", "Next.js", "Python", "Agentic AI", "TypeScript","Speckit Driven Development"];
 
   // 🔹 Filtered projects
   const filteredProjects =
@@ -176,7 +182,7 @@ const projects = [
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "An advanced AI chatbot similar to ChatGPT...",
+    desc: "Nextjs full stack website...",
     tags: ["Next.js", "Tailwind CSS", "TypeScript"],
     liveUrl: "https://govnorsindh-com.vercel.app/",
     codeUrl: "https://github.com/Ramesha-sheikh/govnorsindh.com",
@@ -197,11 +203,31 @@ const projects = [
       />
     ),
     desc: "Full-stack e-commerce website...",
-    tags: ["Next.js", "Tailwind CSS", "Sanity"],
+    tags: ["Next.js", "Tailwind CSS", "Sanity","Typescript"],
     liveUrl: "https://next-js-ecommerce-hackthone.vercel.app/",
     codeUrl: "https://github.com/Ramesha-sheikh/Marketplace-EcommerceWebsite-nextjs-2025",
     bgColor: "bg-[#B4BEE0]",
     githubApi: "https://api.github.com/repos/Ramesha-sheikh/Marketplace-EcommerceWebsite-nextjs-2025",
+  },
+  {
+    title: " Fast Food Website",
+    type: "Next.js",
+    image: (
+      <Image
+        src={burger}
+        sizes="100vw"
+        fill
+        alt="Fast Food Website"
+        className="transition-transform duration-500 hover:scale-110 object-cover"
+      />
+    ),
+    desc: "Fast Food Website using nextjs",
+    tags: ["Next.js", "Tailwind CSS", "Sanity","Typescript"],
+    liveUrl: "https://fast-foodwebsite-next-js.vercel.app/",
+    codeUrl: "https://github.com/Ramesha-sheikh/FastFoodwebsite-next.js",
+    bgColor: "bg-[#B4BEE0]",
+    githubApi: "https://api.github.com/repos/Ramesha-sheikh/FastFoodwebsite-next.js",
+    
   },
   {
     title: "Diamandjwellery",
@@ -211,11 +237,11 @@ const projects = [
         src={jew}
         sizes="100vw"
         fill
-        alt="Responsive CV"
+        alt="jwellery web"
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "A professional, fast, and responsive CV...",
+    desc: "A professional, nexjs and typescript website",
     tags: ["Next.js", "TypeScript", "Tailwind CSS,sanity"],
     liveUrl: "https://milstone03-ecommerce-diamandjwellery-website-rameshajaved.vercel.app/",
     codeUrl: "https://github.com/Ramesha-sheikh/Milstone03-Ecommerce-Diamandjwellery-website-Rameshajaved",
@@ -235,7 +261,7 @@ const projects = [
       />
     ),
     desc: "Technology webite using typecript next.js tailwind css",
-    tags: ["n8n", "Google Gemini", "Airtable", "JavaScript"],
+    tags: ["Next.js", "TypeScript", "Tailwind CSS,sanity"],
     liveUrl: "https://technology-website-customcss-next-js.vercel.app/",
     codeUrl: "https://github.com/Ramesha-sheikh/Technology-website-customcss-next.js",
     bgColor: "bg-[#EBF4F4]",
@@ -261,19 +287,19 @@ const projects = [
     githubApi: "https://api.github.com/repos/Ramesha-sheikh/milstone-03-blogwebsite-ramesha-javed-next.js",
   },
   {
-    title: "ResumeVault app",
-    type: "python",
+    title: "ResumeVault  Python app",
+    type: "Python",
     image: (
       <Image
-        src={blog}
+        src={resume}
         sizes="100vw"
         fill
-        alt="Blog website"
+        alt="ResumeVault app"
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "Blog website using typecript next.js tailwind css",
-    tags: ["python", "streamlit"],
+    desc: "Python and streamlit application",
+    tags: ["Python", "Streamlit"],
     liveUrl: "https://resumevaultstreamli.streamlit.app/",
     codeUrl: "https://github.com/Ramesha-sheikh/ResumeVaultap-streamlit-python",
     bgColor: "bg-[#EBF4F4]",
@@ -281,7 +307,110 @@ const projects = [
     
     
   },
-  
+  {
+    title: "Unit-convertor python ",
+    type: "Python",
+    image: (
+      <Image
+        src={BMI}
+        sizes="100vw"
+        fill
+        alt="Unit-convertor"
+        className="transition-transform duration-500 hover:scale-110 object-cover"
+      />
+    ),
+    desc: "Python and streamlit application",
+    tags: ["Python", "Streamlit"],
+    liveUrl: " https://bmi-calculator-rameshajaved.streamlit.app/",
+    codeUrl: "https://github.com/Ramesha-sheikh/Unit-convertor--app-python?tab=readme-ov-file",
+    bgColor: "bg-[#EBF4F4]",
+    githubApi:"https://api.github.com/repos/Ramesha-sheikh/Unit-convertor--app-python?tab=readme-ov-file",
+    
+    
+    
+  },
+   {
+    title: "Streamlit-Python-fullwebsite-csv-to-excelconverter",
+    type: "Python",
+    image: (
+      <Image
+        src={Data}
+        sizes="100vw"
+        fill
+        alt="csv-to-excelconverter"
+        className="transition-transform duration-500 hover:scale-110 object-cover"
+      />
+    ),
+    desc: "Python and streamlit application",
+    tags: ["Python", "Streamlit"],
+    liveUrl: " https://bmi-calculator-rameshajaved.streamlit.app/",
+    codeUrl: "https://github.com/Ramesha-sheikh/Streamlit-python-fullwebsite-csv-to-excelconverter",
+    bgColor: "bg-[#EBF4F4]",
+    githubApi:"https://api.github.com/repos/Ramesha-sheikh/Streamlit-python-fullwebsite-csv-to-excelconverter",
+    
+  },
+  {
+    title: "Streamlit-Python-Growth Mindset Challenge app",
+    type: "Python",
+    image: (
+      <Image
+        src={mindset}
+        sizes="100vw"
+        fill
+        alt="Growth Mindset Challenge"
+        className="transition-transform duration-500 hover:scale-110 object-cover"
+      />
+    ),
+    desc: "Python and streamlit application",
+    tags: ["Python", "Streamlit"],
+    liveUrl: "https://rameshajaved-mondset-challange-giaic.streamlit.app/",
+    codeUrl: "https://github.com/Ramesha-sheikh/Mindset-project-python-GIAIC",
+    bgColor: "bg-[#EBF4F4]",
+    githubApi:" https://api.github.com/repos/Ramesha-sheikh/Mindset-project-python-GIAIC",
+   
+  },
+  {
+    title: " Password Strength Checker Python app",
+    type: "Python",
+    image: (
+      <Image
+        src={pass}
+        sizes="100vw"
+        fill
+        alt="Password Strength Checker "
+        className="transition-transform duration-500 hover:scale-110 object-cover"
+      />
+    ),
+    desc: "Python and streamlit application",
+    tags: ["Python", "Streamlit"],
+    liveUrl: "https://password-strength-project-python-ramesha.streamlit.app/",
+    codeUrl: "https://github.com/Ramesha-sheikh/Advance-password-strength-project-Giaic",
+    bgColor: "bg-[#EBF4F4]",
+    githubApi:"https://api.github.com/repos/Ramesha-sheikh/Advance-password-strength-project-Giaic",
+    
+   
+  },
+  {
+    title: "Library Management System",
+    type: "Python",
+    image: (
+      <Image
+        src={lib}
+        sizes="100vw"
+        fill
+        alt="Library Management System"
+        className="transition-transform duration-500 hover:scale-110 object-cover"
+      />
+    ),
+    desc: "Python and streamlit application",
+    tags: ["Python", "Streamlit"],
+    liveUrl: "https://library-manger-ramesha-javed-python.streamlit.app/",
+    codeUrl: "https://github.com/Ramesha-sheikh/Advance-password-strength-project-Giaic",
+    bgColor: "bg-[#EBF4F4]",
+    githubApi: "https://api.github.com/repos/Ramesha-sheikh/Advance-password-strength-project-Giaic",
+   
+   
+  },
  
  
   

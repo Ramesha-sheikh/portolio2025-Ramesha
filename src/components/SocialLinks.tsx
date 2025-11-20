@@ -59,8 +59,8 @@ const SocialLinks: React.FC<{ page?: string }> = ({ page }) => {
 const socialLinks = [
   {
     id: 1,
-    title: "Email Humaiza Naz",
-    link: "mailto:humaizaasghar@gmail.com",
+    title: "Email Ramesha ",
+    link: "mailto:Rameshajaved1@gmail.com",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -74,8 +74,8 @@ const socialLinks = [
   },
   {
     id: 2,
-    title: "Humaiza Naz's Github Profile",
-    link: "https://github.com/HumaizaNaz",
+    title: "Ramesha's Github Profile",
+    link: "https://github.com/Ramesha-sheikh",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -93,8 +93,8 @@ const socialLinks = [
   },
   {
     id: 3,
-    title: "Humaiza Naz's LinkedIn Profile",
-    link: "https://www.linkedin.com/in/humaiza-naz/",
+    title: "Ramesha's LinkedIn Profile",
+    link: "https://www.linkedin.com/in/rameesha20",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -107,26 +107,11 @@ const socialLinks = [
       </svg>
     ),
   },
+ 
   {
     id: 4,
-    title: "Humaiza Naz's YouTube Channel",
-    link: "https://www.youtube.com/@knowhowcoding",
-    svg: (
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        className="dark:fill-bglight hover:fill-marrsgreen dark:hover:fill-carrigreen"
-      >
-        <path d="M19.615 3.184c.971.263 1.733 1.026 1.996 1.996.474 1.78.474 5.48.474 5.48s0 3.7-.474 5.48a2.733 2.733 0 0 1-1.996 1.996c-1.78.474-7.615.474-7.615.474s-5.835 0-7.615-.474a2.733 2.733 0 0 1-1.996-1.996C2 14.36 2 10.66 2 10.66s0-3.7.474-5.48a2.733 2.733 0 0 1 1.996-1.996C6.25 2.71 12.085 2.71 12.085 2.71s5.835 0 7.615.474zM10 8.66v4l4-2-4-2z"></path>
-      </svg>
-    ),
-  },
-  {
-    id: 5,
-    title: "Humaiza Naz's Facebook Profile",
-    link: "https://www.facebook.com/profile.php?id=61567726929622",
+    title: "Ramesha's Facebook Profile",
+    link: "https://www.facebook.com/ramesha.javed.2025",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

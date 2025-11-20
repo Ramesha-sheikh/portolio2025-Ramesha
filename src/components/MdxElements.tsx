@@ -56,6 +56,6 @@ export const Pre = (props: any) => (
   <>
     <pre>
       <code className="language-javascript" {...props} />
-    </pre>
-  </>
+    </pre>
+  </>
 );

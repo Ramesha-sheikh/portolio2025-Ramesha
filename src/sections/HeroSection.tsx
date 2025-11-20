@@ -5,8 +5,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import LinkButton from "../components/LinkButton";
-
-import rum from "../public/rum.png";
+import rum from "../../public/rum.png"
 
 const HeroSection: React.FC = () => {
   const sectionRef = useRef(null);
@@ -31,29 +30,29 @@ const HeroSection: React.FC = () => {
     // illustration floating effect
     const imgTl = gsap.timeline({ repeat: -1 });
     imgTl
-      .to(q(".image-animation"), 3, {
+      .to(q(".image-animation"), 4, {
         y: "-=30",
         x: "+=20",
         rotation: "-=2",
         ease: "power1.easeInOut",
       })
-      .to(q(".image-animation"), 2, {
+      .to(q(".image-animation"), 3, {
         y: "+=30",
         x: "-=20",
         rotation: "-=2",
         ease: "power1.easeInOut",
       })
-      .to(q(".image-animation"), 3, {
+      .to(q(".image-animation"), 4, {
         y: "-=20",
         rotation: "+=2",
         ease: "power1.easeInOut",
       })
-      .to(q(".image-animation"), 3, {
+      .to(q(".image-animation"), 4, {
         y: "+=20",
         rotation: "+=2",
         ease: "power1.easeInOut",
       });
-  }, [q]); // <- ye missing tha, cleanup ke liye dependency array
+  }, [q]);
 
   return (
     <section
@@ -67,29 +66,31 @@ const HeroSection: React.FC = () => {
         FULL-STACK DEVELOPER AI SOLUTIONS ARCHITECT
       </span>
 
+      {/* 🌟 Image Section (Balanced Size + Scale) */}
       <div className="image-animation z-10 select-none mt-0 xs:mt-6 sm:mt-14 lg:mt-0 px-0 mx-auto lg:p-0 lg:basis-1/3">
-        <div className="relative w-72 md:w-80 h-80 flex items-center mx-auto">
-          <div className="absolute pointer-events-none  sm:scale-95 mx-auto">
+        <div className="relative w-80 md:w-[28rem] h-[28rem] flex items-center justify-center mx-auto">
+          <div className="absolute pointer-events-none scale-105 md:scale-115 mx-auto">
             <Image
               src={rum}
               width={1250}
               height={1500}
               priority
               id="character-illustration"
-              aria-label=" Ramesha javed character illustration levitating with a Macbook"
-              alt="Ramesha javed  character illustration"
+              aria-label="Ramesha javed character illustration levitating with a Macbook"
+              alt="Ramesha javed character illustration"
             />
           </div>
         </div>
       </div>
 
+      {/* 🌟 Text Section */}
       <div className="lg:basis-2/3 z-10 relative">
         <span className="text-marrsgreen lg:text-lg font-medium dark:text-carrigreen">
           Hi my name is
         </span>
         <div className="overflow-hidden">
           <h1 className="text-animation text-4xl md:text-5xl lg:text-7xl md:my-2 font-semibold my-1">
-            Ramesha javed 
+            Ramesha javed
           </h1>
         </div>
         <div className="overflow-hidden">
@@ -102,22 +103,22 @@ const HeroSection: React.FC = () => {
             I specialize in building scalable web applications and intelligent automation systems.
           </p>
           <p>
-            I specialize in TypeScript and Next.js for the frontend, 
-            and Python and TypeScript for the backend. Leveraging OpenAI and n8n, 
-            design responsive, user-centered interfaces and deploy 
+            I specialize in TypeScript and Next.js for the frontend,
+            and Python and TypeScript for the backend. Leveraging OpenAI and n8n,
+            I design responsive, user-centered interfaces and deploy
             AI agents to tackle complex challenges.
-            My work blends strong technical expertise with creative 
-            problem-solving to deliver impactful solutions
+            My work blends strong technical expertise with creative
+            problem-solving to deliver impactful solutions.
           </p>
         </div>
         <div className="flex gap-4">
-          
-          <LinkButton href="https://drive.google.com/file/d/1C7ststyLxlvIGNvS6ZsQef2li8yuVehO/view?usp=drive_link" >
-  View CV
-</LinkButton>
-
+          <LinkButton href="https://drive.google.com/file/d/1C7ststyLxlvIGNvS6ZsQef2li8yuVehO/view?usp=drive_link">
+            View CV
+          </LinkButton>
         </div>
       </div>
+
+      {/* 🌟 Scroll Indicator */}
       <a
         href="#whoami"
         className="group absolute link-outline animate-bounce hidden md:bottom-14 lg:bottom-16 left-1/2 transform -translate-x-1/2 md:flex items-center flex-col"

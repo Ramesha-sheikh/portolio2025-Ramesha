@@ -12,8 +12,9 @@ tags:
   - NextJS
   - TailwindCSS
   - Hackathon
-author: Humaiza Naz
-coverImage: /ecom.JPG
+author: Ramesha Javed
+coverImage: /images/ec.jpeg
+
 coverImageAlt: Screenshot of my e-commerce project
 coverImageWidth: "1200"
 coverImageHeight: "700"
@@ -66,3 +67,7 @@ Completing this within 24 hours was challenging but also very rewarding!
 
 This hackathon project gave me confidence to build more complex web applications.  
 It was a fun learning experience, and I look forward to improving this project even further! 🚀  
+
+
+
+

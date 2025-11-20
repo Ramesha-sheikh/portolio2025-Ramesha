@@ -8,9 +8,10 @@ excerpt:
 datetime: 2025-08-26T05:35:07.000+00:00
 featured: true
 category: Automation
-author: Humaiza Naz
+author: Ramesha Javed
 type: article
-coverImage: /n8n.JPG
+coverImage: /images/n8n.png
+
 coverImageAlt: n8n workflow builder dashboard
 coverImageWidth: "1200"
 coverImageHeight: "630"

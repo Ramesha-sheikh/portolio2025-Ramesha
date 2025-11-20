@@ -6,7 +6,7 @@ import { useTheme } from "next-themes";
 import { useSection } from "../context/section";
 import useOnScreen from "@/hooks/useOnScreen";
 import useScrollActive from "@/hooks/useScrollActive";
-import satNaing from "@/public/rmm.jpg";
+import satNaing from "../../public/rmm.jpg";
 import AboutBgSvg from "@/components/AboutBgSvg";
 import EduGroup from "@/components/EduGroup";
 

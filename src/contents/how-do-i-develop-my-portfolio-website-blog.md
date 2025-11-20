@@ -15,9 +15,10 @@ tags:
   - AI Agents
   - Gemini
   - Automation
-author: Humaiza Naz
+author: Ramesha javed
 type: article
-coverImage: /Agent.jpg
+coverImage: /images/open.png
+
 coverImageAlt: AI agents powered by OpenAI SDK
 coverImageWidth: "1200"
 coverImageHeight: "700"

@@ -20,7 +20,7 @@ const NotFound = () => {
   return (
     <>
       <AppHead
-        title="Humaiza Naz - Page Not Found"
+        title="Ramesha - Page Not Found"
         url={`${process.env.NEXT_PUBLIC_URL}/404`}
         meta={metaForAppHead}
       />

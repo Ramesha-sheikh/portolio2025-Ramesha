@@ -10,9 +10,10 @@ tags:
   - NextJS
   - AI Agents
   - n8n
-author: Humaiza Naz
+author: Ramesha Javed
 type: article
-coverImage: /journey.png
+coverImage: /images/agentic.jpeg
+
 coverImageAlt: "Code editor and AI illustration"
 title: "My Journey from HTML to AI Agents: How I Learned Modern Web Development"
 description: "From writing my first HTML page to building AI-powered applications with Next.js, n8n, and agentic AI — here’s my journey as a developer."

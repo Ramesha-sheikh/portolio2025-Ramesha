@@ -67,8 +67,8 @@ const BlogSection: React.FC<Props> = ({ posts }) => {
         <div className="text-center mb-8" ref={elementRef}>
           On my blog, I share practical insights and personal experiences about
           building scalable web applications and intelligent automation systems.
-          I often write about Next.js, TypeScript, Python, OpenAI SDK, and n8n —
-          blending modern development with AI-powered workflows.
+          I often write about Next.js, TypeScript, Python, OpenAI SDK, and spec-kit
+          modern development with AI-powered workflows.
         </div>
 
         <div>
@@ -111,7 +111,7 @@ const BlogSection: React.FC<Props> = ({ posts }) => {
 
           <div className="mt-4 text-center">
             <Link href="/blog" className="link">
-              Saare blog posts parhein{" "}
+              read blog post{" "}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-6 w-6 inline-block"

@@ -47,8 +47,8 @@ const Footer: React.FC<Props> = ({ noPadding = false }) => {
 const socialLinks = [
   {
     id: 1,
-    title: "Humaiza's Github Profile",
-    link: "https://github.com/HumaizaNaz?page=2&tab=repositories",
+    title: "Ramesha's Github Profile",
+    link: "https://github.com/Ramesha-sheikh",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
