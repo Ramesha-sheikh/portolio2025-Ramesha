@@ -1,149 +1,125 @@
 "use client";
 import { useEffect, useRef } from "react";
-import Image from "next/image";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
-import LinkButton from "../components/LinkButton";
-import rum from "../../public/rum.png"
+import { motion } from "framer-motion";
+import Link from "next/link";
 
 const HeroSection: React.FC = () => {
   const sectionRef = useRef(null);
-  const q = gsap.utils.selector(sectionRef);
-
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger);
-
-    // bg text parallax effect
-    gsap.to(q(".bg-text"), {
-      scrollTrigger: {
-        trigger: q(".bg-text"),
-        scrub: true,
-      },
-      y: 350,
-    });
-
-    // text animation after initial load
-    const tl = gsap.timeline({ defaults: { stagger: 0.2, duration: 0.3 } });
-    tl.fromTo(q(".text-animation"), { y: 100 }, { y: 0, delay: 1 });
-
-    // illustration floating effect
-    const imgTl = gsap.timeline({ repeat: -1 });
-    imgTl
-      .to(q(".image-animation"), 4, {
-        y: "-=30",
-        x: "+=20",
-        rotation: "-=2",
-        ease: "power1.easeInOut",
-      })
-      .to(q(".image-animation"), 3, {
-        y: "+=30",
-        x: "-=20",
-        rotation: "-=2",
-        ease: "power1.easeInOut",
-      })
-      .to(q(".image-animation"), 4, {
-        y: "-=20",
-        rotation: "+=2",
-        ease: "power1.easeInOut",
-      })
-      .to(q(".image-animation"), 4, {
-        y: "+=20",
-        rotation: "+=2",
-        ease: "power1.easeInOut",
-      });
-  }, [q]);
 
   return (
     <section
       ref={sectionRef}
-      className="relative mt-16 sm:mt-8 pt-8 lg:pt-0 px-4 sm:px-8 md:px-20 max-w-5xl sm:pb-24 min-h-[769px] mx-auto sm:flex sm:flex-col sm:justify-center sm:items-center lg:flex-row-reverse"
+      className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-8 md:px-20 py-20 overflow-hidden"
     >
-      <span
-        aria-hidden="true"
-        className="bg-text absolute -top-36 rotate-12 text-gray-100 dark:text-[#1f2e3a] text-9xl scale-150 tracking-wide font-bold select-none pointer-events-none text-center z-0"
+      {/* Background Gradient Effect */}
+      <div className="absolute inset-0 bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-[#0a1f1c] dark:via-[#0d2b27] dark:to-[#1B2731] -z-10"></div>
+
+      {/* Top Badge */}
+      <motion.div
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.2 }}
+        className="inline-flex items-center gap-2 px-6 py-2 mb-12 rounded-full border-2 border-marrsgreen/30 dark:border-carrigreen/30 bg-marrsgreen/5 dark:bg-carrigreen/5"
       >
-        FULL-STACK DEVELOPER AI SOLUTIONS ARCHITECT
-      </span>
-
-      {/* 🌟 Image Section (Balanced Size + Scale) */}
-      <div className="image-animation z-10 select-none mt-0 xs:mt-6 sm:mt-14 lg:mt-0 px-0 mx-auto lg:p-0 lg:basis-1/3">
-        <div className="relative w-80 md:w-[28rem] h-[28rem] flex items-center justify-center mx-auto">
-          <div className="absolute pointer-events-none scale-105 md:scale-115 mx-auto">
-            <Image
-              src={rum}
-              width={1250}
-              height={1500}
-              priority
-              id="character-illustration"
-              aria-label="Ramesha javed character illustration levitating with a Macbook"
-              alt="Ramesha javed character illustration"
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* 🌟 Text Section */}
-      <div className="lg:basis-2/3 z-10 relative">
-        <span className="text-marrsgreen lg:text-lg font-medium dark:text-carrigreen">
-          Hi my name is
+        <span className="w-2 h-2 bg-marrsgreen dark:bg-carrigreen rounded-full animate-pulse"></span>
+        <span className="text-sm md:text-base font-medium text-marrsgreen dark:text-carrigreen uppercase tracking-wider">
+          Powered by Ramesha Javed
         </span>
-        <div className="overflow-hidden">
-          <h1 className="text-animation text-4xl md:text-5xl lg:text-7xl md:my-2 font-semibold my-1">
-            Ramesha javed
-          </h1>
-        </div>
-        <div className="overflow-hidden">
-          <span className="text-animation text-2xl md:text-3xl lg:text-5xl block md:my-3 text-marrsgreen dark:text-carrigreen font-medium">
-            Full-Stack Developer & AI Solutions Architect
-          </span>
-        </div>
-        <div className="mt-2 my-4 md:mb-8">
-          <p className="mb-1">
-            I specialize in building scalable web applications and intelligent automation systems.
-          </p>
-          <p>
-            I specialize in TypeScript and Next.js for the frontend,
-            and Python and TypeScript for the backend. Leveraging OpenAI and n8n,
-            I design responsive, user-centered interfaces and deploy
-            AI agents to tackle complex challenges.
-            My work blends strong technical expertise with creative
-            problem-solving to deliver impactful solutions.
-          </p>
-        </div>
-        <div className="flex gap-4">
-          <LinkButton href="https://ramesha-javed-web-cv.vercel.app/">
-            View CV
-          </LinkButton>
-        </div>
-      </div>
+      </motion.div>
 
-      {/* 🌟 Scroll Indicator */}
-      <a
-        href="#whoami"
-        className="group absolute link-outline animate-bounce hidden md:bottom-14 lg:bottom-16 left-1/2 transform -translate-x-1/2 md:flex items-center flex-col"
+      {/* Main Heading */}
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="text-center max-w-6xl mx-auto"
       >
-        <span className="group-hover:text-marrsgreen dark:group-hover:text-carrigreen">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold leading-tight mb-4">
+          <span className="block text-gray-900 dark:text-white mb-2">
+            ARCHITECTING THE FUTURE
+          </span>
+          <span className="block text-marrsgreen dark:text-carrigreen relative inline-block">
+            OF AGENTIC AI SYSTEMS.
+            <motion.span
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 0.8, delay: 1 }}
+              className="absolute left-0 -bottom-2 w-full h-1 bg-marrsgreen dark:bg-carrigreen origin-left"
+            ></motion.span>
+          </span>
+        </h1>
+      </motion.div>
+
+      {/* Subtitle */}
+      <motion.p
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+        className="text-center text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mt-8 mb-12 px-4"
+      >
+        Expertly Blending Next.js, TypeScript & Python to Craft Cutting-Edge Agentic AI
+        Agents, Intelligent Chatbots & Scalable Full-Stack Solutions.
+      </motion.p>
+
+      {/* CTA Buttons */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 1 }}
+        className="flex flex-col sm:flex-row gap-4 items-center justify-center"
+      >
+        {/* Deployed Projects Button */}
+        <Link
+          href="#projects"
+          className="group relative px-8 py-4 bg-marrsgreen dark:bg-carrigreen text-white rounded-full font-semibold text-base md:text-lg transition-all duration-300 hover:shadow-lg hover:shadow-marrsgreen/50 dark:hover:shadow-carrigreen/50 hover:scale-105 flex items-center gap-2"
+        >
+          Deployed Projects
+          <svg
+            className="w-5 h-5 transition-transform group-hover:translate-x-1"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M9 5l7 7-7 7"
+            />
+          </svg>
+        </Link>
+
+        {/* Download CV Button */}
+        <a
+          href="https://ramesha-javed-web-cv.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-8 py-4 border-2 border-gray-800 dark:border-white text-gray-800 dark:text-white rounded-full font-semibold text-base md:text-lg transition-all duration-300 hover:bg-gray-800 dark:hover:bg-white hover:text-white dark:hover:text-gray-900 hover:scale-105"
+        >
+          View CV
+        </a>
+      </motion.div>
+
+      {/* Scroll Indicator */}
+      <motion.a
+        href="#whoami"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 1.4 }}
+        className="group absolute bottom-8 left-1/2 transform -translate-x-1/2 flex items-center flex-col animate-bounce"
+      >
+        <span className="text-sm text-gray-600 dark:text-gray-400 group-hover:text-marrsgreen dark:group-hover:text-carrigreen mb-1">
           Scroll
         </span>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
           height="24"
-          className="dark:fill-bglight group-hover:fill-marrsgreen dark:group-hover:fill-carrigreen"
-        >
-          <path d="M11.975 22H12c3.859 0 7-3.14 7-7V9c0-3.841-3.127-6.974-6.981-7h-.06C8.119 2.022 5 5.157 5 9v6c0 3.86 3.129 7 6.975 7zM7 9a5.007 5.007 0 0 1 4.985-5C14.75 4.006 17 6.249 17 9v6c0 2.757-2.243 5-5 5h-.025C9.186 20 7 17.804 7 15V9z"></path>
-          <path d="M11 6h2v6h-2z"></path>
-        </svg>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          className="dark:fill-bglight group-hover:fill-marrsgreen dark:group-hover:fill-carrigreen"
+          className="fill-gray-600 dark:fill-gray-400 group-hover:fill-marrsgreen dark:group-hover:fill-carrigreen"
         >
           <path d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"></path>
         </svg>
-      </a>
+      </motion.a>
     </section>
   );
 };
