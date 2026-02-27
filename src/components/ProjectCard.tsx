@@ -1,10 +1,11 @@
 
 
 
-"use client";  
+"use client";
 import { JSX, useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import GlowCard from "./GlowCard";
 
 type Props = {
   index: number;
@@ -91,14 +92,15 @@ const ProjectCard: React.FC<Props> = ({ index, project }) => {
 
   return (
     <div ref={sectionRef} className={`md:basis-1/2 md:px-8 py-2 md:py-4`}>
-      <div className={`project-card project-card-${index}`}>
-        <div className="overflow-hidden">
-          <div
-            className={`project-image ${project.bgColor} relative aspect-[16/9]`}
-          >
-            {project.image}
+      <GlowCard className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-lg p-4">
+        <div className={`project-card project-card-${index}`}>
+          <div className="overflow-hidden rounded-lg">
+            <div
+              className={`project-image ${project.bgColor} relative aspect-[16/9]`}
+            >
+              {project.image}
+            </div>
           </div>
-        </div>
         <div className="overflow-hidden">
           <div className="project-text flex items-center justify-between">
             <h3 className=" text-marrsgreen dark:text-carrigreen text-lg my-1 font-medium">
@@ -190,7 +192,8 @@ const ProjectCard: React.FC<Props> = ({ index, project }) => {
             </li>
           ))}
         </ul>
-      </div>
+        </div>
+      </GlowCard>
     </div>
   );
 };
