@@ -45,7 +45,7 @@ const ProjectSection: React.FC = () => {
   }, [onSectionChange, projectSection]);
 
   // ✅ Fixed categories
-  const categories = ["All", "Next.js", "Python", "Agentic AI", "TypeScript","Speckit Driven Development"];
+  const categories = ["All", "Agentic AI", "RAG Systems", "Medical AI", "Next.js", "Full-Stack"];
 
   // 🔹 Filtered projects
   const filteredProjects =
@@ -171,28 +171,128 @@ const ProjectSection: React.FC = () => {
 // ✅ Projects array ka type field ab sirf fixed categories use karega
 const projects = [
   {
-    title: "Govnor Sindh Initative Website",
-    type: "Next.js",
+    title: "VisionDX AI - Medical Imaging Platform",
+    type: "Medical AI",
+    image: (
+      <div className="w-full h-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center">
+        <div className="text-white text-center p-6">
+          <svg className="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12zm-1-5h2v2H9v-2zm0-6h2v4H9V5z"/>
+          </svg>
+          <p className="font-bold text-lg">AI Medical Diagnostics</p>
+        </div>
+      </div>
+    ),
+    desc: "NIC Karachi-registered AI medical imaging startup. Analyzes X-rays, MRI, CT scans, and 25+ medical imaging types with AI-driven diagnostic reports. Production-grade AI vision models for clinical diagnostics.",
+    tags: ["AI Vision", "Medical AI", "Python", "FastAPI", "Gemini API", "Cloud AI"],
+    liveUrl: "#",
+    codeUrl: "#",
+    bgColor: "bg-gradient-to-br from-blue-500 to-purple-600",
+    githubApi: "",
+  },
+  {
+    title: "AI-Native Autonomous Agent Suite",
+    type: "Agentic AI",
+    image: (
+      <div className="w-full h-full bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500 flex items-center justify-center">
+        <div className="text-white text-center p-6">
+          <svg className="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"/>
+          </svg>
+          <p className="font-bold text-lg">Multi-Agent System</p>
+        </div>
+      </div>
+    ),
+    desc: "Production multi-agent system with real-time model routing between Gemini, Claude, and Grok. Features persistent memory, file processing, and autonomous task execution using MCP servers.",
+    tags: ["Multi-Agent", "Gemini CLI", "Claude", "MCP Server", "Python", "HITL"],
+    liveUrl: "#",
+    codeUrl: "#",
+    bgColor: "bg-gradient-to-br from-emerald-500 to-teal-600",
+    githubApi: "",
+  },
+  {
+    title: "CRM Digital FTE Factory",
+    type: "Agentic AI",
+    image: (
+      <div className="w-full h-full bg-gradient-to-br from-orange-500 via-red-500 to-pink-500 flex items-center justify-center">
+        <div className="text-white text-center p-6">
+          <svg className="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M2 5a2 2 0 012-2h7a2 2 0 012 2v4a2 2 0 01-2 2H9l-3 3v-3H4a2 2 0 01-2-2V5z"/>
+            <path d="M15 7v2a4 4 0 01-4 4H9.828l-1.766 1.767c.28.149.599.233.938.233h2l3 3v-3h2a2 2 0 002-2V9a2 2 0 00-2-2h-1z"/>
+          </svg>
+          <p className="font-bold text-lg">24/7 AI Employee</p>
+        </div>
+      </div>
+    ),
+    desc: "24/7 AI Customer Success employee built with Claude Code, OpenAI Agents SDK, FastAPI, PostgreSQL, pgvector, Kafka, Kubernetes, Gmail API, and Twilio WhatsApp. Fully autonomous CRM agent.",
+    tags: ["OpenAI Agents", "FastAPI", "Kafka", "Kubernetes", "pgvector", "Twilio"],
+    liveUrl: "#",
+    codeUrl: "#",
+    bgColor: "bg-gradient-to-br from-orange-500 to-pink-600",
+    githubApi: "",
+  },
+  {
+    title: "Physical AI Textbook with RAG Chatbot",
+    type: "RAG Systems",
+    image: (
+      <div className="w-full h-full bg-gradient-to-br from-violet-500 via-purple-500 to-indigo-500 flex items-center justify-center">
+        <div className="text-white text-center p-6">
+          <svg className="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
+          </svg>
+          <p className="font-bold text-lg">RAG-Powered Book</p>
+        </div>
+      </div>
+    ),
+    desc: "Spec-Kit generated AI textbook with Qdrant-backed RAG chatbot, Better Auth authentication, and GitHub Pages deployment. Features semantic search and intelligent Q&A.",
+    tags: ["RAG", "Qdrant", "Vector DB", "Better Auth", "Docusaurus", "Spec-Kit"],
+    liveUrl: "#",
+    codeUrl: "#",
+    bgColor: "bg-gradient-to-br from-violet-500 to-indigo-600",
+    githubApi: "",
+  },
+  {
+    title: "E-Commerce Autonomous Chatbot",
+    type: "Agentic AI",
+    image: (
+      <div className="w-full h-full bg-gradient-to-br from-green-500 via-emerald-500 to-teal-500 flex items-center justify-center">
+        <div className="text-white text-center p-6">
+          <svg className="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z" clipRule="evenodd"/>
+          </svg>
+          <p className="font-bold text-lg">AI Shopping Assistant</p>
+        </div>
+      </div>
+    ),
+    desc: "Gemini-powered autonomous chatbot with real-time analytics dashboard. Built with Next.js, Node.js, Sanity CMS. Handles customer queries, product recommendations, and order tracking.",
+    tags: ["Gemini API", "Next.js", "Node.js", "Sanity CMS", "Real-time Analytics"],
+    liveUrl: "#",
+    codeUrl: "#",
+    bgColor: "bg-gradient-to-br from-green-500 to-teal-600",
+    githubApi: "",
+  },
+  {
+    title: "Governor Sindh IT Initiative Platform",
+    type: "Full-Stack",
     image: (
       <Image
         src={gov}
         sizes="100vw"
         fill
-        alt="govnor Sindh Initative"
+        alt="Governor Sindh Initiative"
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "Nextjs full stack website...",
-    tags: ["Next.js", "Tailwind CSS", "TypeScript"],
+    desc: "Full-stack Next.js and PostgreSQL platform supporting 50,000+ student registrations. Production-grade scalable architecture with real-time data processing.",
+    tags: ["Next.js", "PostgreSQL", "TypeScript", "Tailwind CSS"],
     liveUrl: "https://govnorsindh-com.vercel.app/",
     codeUrl: "https://github.com/Ramesha-sheikh/govnorsindh.com",
     bgColor: "bg-[#B4BEE0]",
-    githubApi: " https://api.github.com/repos/Ramesha-sheikh/govnorsindh.com",
-   
+    githubApi: "https://api.github.com/repos/Ramesha-sheikh/govnorsindh.com",
   },
   {
     title: " E-commerce  Sofa Website",
-    type: "Next.js",
+    type: "Full-Stack",
     image: (
       <Image
         src={eco}
@@ -211,7 +311,7 @@ const projects = [
   },
   {
     title: " Fast Food Website",
-    type: "Next.js",
+    type: "Full-Stack",
     image: (
       <Image
         src={burger}
@@ -231,7 +331,7 @@ const projects = [
   },
   {
     title: "Diamandjwellery",
-    type: "TypeScript",
+    type: "Full-Stack",
     image: (
       <Image
         src={jew}
@@ -288,7 +388,7 @@ const projects = [
   },
   {
     title: "ResumeVault  Python app",
-    type: "Python",
+    type: "Full-Stack",
     image: (
       <Image
         src={resume}
@@ -309,7 +409,7 @@ const projects = [
   },
   {
     title: "Unit-convertor python ",
-    type: "Python",
+    type: "Full-Stack",
     image: (
       <Image
         src={BMI}
@@ -331,7 +431,7 @@ const projects = [
   },
    {
     title: "Streamlit-Python-fullwebsite-csv-to-excelconverter",
-    type: "Python",
+    type: "Full-Stack",
     image: (
       <Image
         src={Data}
@@ -351,7 +451,7 @@ const projects = [
   },
   {
     title: "Streamlit-Python-Growth Mindset Challenge app",
-    type: "Python",
+    type: "Full-Stack",
     image: (
       <Image
         src={mindset}
@@ -371,7 +471,7 @@ const projects = [
   },
   {
     title: " Password Strength Checker Python app",
-    type: "Python",
+    type: "Full-Stack",
     image: (
       <Image
         src={pass}
@@ -392,7 +492,7 @@ const projects = [
   },
   {
     title: "Library Management System",
-    type: "Python",
+    type: "Full-Stack",
     image: (
       <Image
         src={lib}

@@ -84,13 +84,16 @@ const AboutSection: React.FC = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
           >
-           
-            I&apos;m a skilled full-stack developer with 4+ years of experience in HTML, CSS,
-             TypeScript, Next.js, Node.js, and React.
-             Since February 2024, I&apos;ve been enhancing my expertise at GIAIC and PIAIC, 
-         focusing on Agentic AI and workflow automation with n8n. My work spans from
-           e-commerce platforms to AI-driven chatbots, delivering scalable and innovative
-      solutions that bridge full-stack development with advanced AI technologies.
+            I&apos;m an <strong>Agentic AI Engineer & Full-Stack Developer</strong> specializing in
+            autonomous AI systems, multi-agent orchestration, and production-grade AI deployments.
+            As the <strong>Founder & CEO of VisionDX AI</strong>, I&apos;m building next-generation
+            medical imaging diagnostics powered by AI.
+            <br /><br />
+            My expertise spans <strong>OpenAI Agents SDK, Gemini API, RAG systems with Qdrant</strong>,
+            and deploying intelligent solutions using <strong>Python, TypeScript, Next.js</strong>, and
+            cloud-native architectures with <strong>Kubernetes & Docker</strong>. I&apos;ve successfully
+            delivered projects ranging from 24/7 AI CRM employees to medical AI platforms analyzing
+            25+ imaging types, bridging cutting-edge AI research with real-world production systems.
           </motion.p>
 
           {/* Education */}
@@ -117,27 +120,39 @@ const AboutSection: React.FC = () => {
 const educationInfo = [
   {
     id: 1,
-    title: "Bachelor's Degree",
-    subTitle: "University of Karachi | 2019 - 2022",
-    list: ["Graduated in Computer Science"],
+    title: "Certified Agentic & Robotic AI Engineer",
+    subTitle: "PIAIC - Presidential Initiative for AI & Computing | Q4 Ongoing",
+    list: [
+      "Multi-Agent Orchestration & MCP Servers",
+      "Spec-Kit Framework & Agentic Systems",
+      "Production AI Deployment & Cloud Architecture"
+    ],
   },
   {
     id: 2,
-    title: "Diploma in Information Technology",
-    subTitle: "DIT Form, Korean Computer Academy | 2022",
-    list: ["Completed Diploma in IT"],
+    title: "Full Stack + Agentic AI Specialization",
+    subTitle: "Governor Sindh Initiative (GIAIC) | 2024 - Present",
+    list: [
+      "Advanced Agentic AI Development",
+      "RAG Systems & Vector Databases",
+      "OpenAI Agents SDK & Gemini API"
+    ],
   },
   {
     id: 3,
-    title: "Governor House AI Initiative",
-    subTitle: "Governor House, Sindh, Karachi | Quarter 4 Agentic AI",
-    list: ["Participated in AI-focused initiatives"],
+    title: "Bachelor's Degree in Computer Science",
+    subTitle: "University of Karachi | 2019 - 2022",
+    list: ["Foundation in Computer Science & Software Engineering"],
   },
   {
     id: 4,
-    title: "PIAIC - Presidential Initiative for AI & Computing",
-    subTitle: "Quarter 3 (Agentic AI) | Current",
-    list: ["Learning Agentic AI, n8n automation, and full-stack development"],
+    title: "Hackathon Achievements",
+    subTitle: "Multiple AI Hackathons | 2025-2026",
+    list: [
+      "Physical AI Textbook with RAG (Nov 2025)",
+      "Personal AI Employee System (Jan-Feb 2026)",
+      "CRM Digital FTE Factory (Feb 2026)"
+    ],
   },
 ];
 
