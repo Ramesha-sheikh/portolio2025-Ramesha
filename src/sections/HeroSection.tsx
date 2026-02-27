@@ -112,7 +112,7 @@ const HeroSection: React.FC = () => {
           </p>
         </div>
         <div className="flex gap-4">
-          <LinkButton href="https://drive.google.com/file/d/1C7ststyLxlvIGNvS6ZsQef2li8yuVehO/view?usp=drive_link">
+          <LinkButton href="https://ramesha-javed-web-cv.vercel.app/">
             View CV
           </LinkButton>
         </div>
