@@ -7,6 +7,8 @@ import Header from "@/components/Header";
 import SocialLinks from "@/components/SocialLinks";
 import HeroSection from "@/sections/HeroSection";
 import AboutSection from "@/sections/AboutSection";
+import SkillsSection from "@/sections/SkillsSection";
+import ExperienceSection from "@/sections/ExperienceSection";
 import ProjectSection from "@/sections/ProjectSection";
 import BlogSection from "@/sections/BlogSection";
 import ContactSection from "@/sections/ContactSection";
@@ -16,12 +18,12 @@ import { MdxMeta } from "@/types/mxd"; // Import shared MdxMeta type
 
 const meta = {
   description:
-    "Ramesha is a full-stack developer based in Yangon, Myanmar. She is passionate about writing codes and developing web applications to solve real-life challenges.",
+    "Ramesha Javed - AI-Native Full Stack Developer & Founder of VisionDX AI. Expert in building production-grade autonomous agents using Spec-Kit, Gemini CLI, MCP servers, OpenAI SDK, and RAG systems. Based in Karachi, Pakistan.",
   author: "Ramesha Javed",
   type: "website",
   ogImage: `${process.env.NEXT_PUBLIC_URL}/favicons/mstile-150x150.png`,
-  siteName: "Ramesha Javed",
-  imageAlt: "Ramesha portfolio website",
+  siteName: "Ramesha Javed - Agentic AI Developer",
+  imageAlt: "Ramesha Javed portfolio - AI Developer & Startup Founder",
 };
 
 // Async server component
@@ -50,7 +52,7 @@ export default async function Home() {
   return (
     <>
       <AppHead
-        title="Ramesha - A Full-stack Developer"
+        title="Ramesha Javed - Agentic AI Developer & Founder VisionDX AI"
         url={`${process.env.NEXT_PUBLIC_URL}`}
         meta={meta}
       />
@@ -62,6 +64,8 @@ export default async function Home() {
           <main id="main">
             <HeroSection />
             <AboutSection />
+            <SkillsSection />
+            <ExperienceSection />
             <ProjectSection />
             <BlogSection posts={blogPosts} />
             <ContactSection />

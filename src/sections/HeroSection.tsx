@@ -55,10 +55,10 @@ const HeroSection: React.FC = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.8 }}
-        className="text-center text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto mt-8 mb-12 px-4"
+        className="text-center text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto mt-8 mb-12 px-4"
       >
-        Expertly Blending Next.js, TypeScript & Python to Craft Cutting-Edge Agentic AI
-        Agents, Intelligent Chatbots & Scalable Full-Stack Solutions.
+        AI-Native Full Stack Developer building production-grade autonomous agents using Spec-Kit, Gemini CLI, MCP servers, OpenAI SDK, and RAG systems.
+        Expert in Next.js, TypeScript, Python, Node.js, Google Gemini, Hugging Face, and cloud-native deployment.
       </motion.p>
 
       {/* CTA Buttons */}

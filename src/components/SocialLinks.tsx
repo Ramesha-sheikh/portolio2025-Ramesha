@@ -128,6 +128,8 @@ const socialLinks = [
 const navLinks = [
   { url: "#", text: "Welcome" },
   { url: "#whoami", text: "Who am I?" },
+  { url: "#skills", text: "Skills" },
+  { url: "#experience", text: "Experience" },
   { url: "#projects", text: "Projects" },
   { url: "#blog", text: "Blog" },
   { url: "#contact", text: "Contact" },
