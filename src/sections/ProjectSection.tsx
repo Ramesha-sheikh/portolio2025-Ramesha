@@ -4,27 +4,23 @@ import { useEffect, useRef, useState } from "react";
 import { useTheme } from "next-themes";
 import { motion } from "framer-motion";
 
-import ProjectCard from "@/components/ProjectCard";
+import ProjectCardNew from "@/components/ProjectCardNew";
 import { useSection } from "../context/section";
 import useOnScreen from "@/hooks/useOnScreen";
 import useScrollActive from "@/hooks/useScrollActive";
 
 import gov from "../../public/nextjs/gov1.png";
-import bur from "@/public/nextjs/bur.png";
-import blog from "../../public/nextjs/blog.png";
-
-
 import eco from "../../public/nextjs/eco.png";
-import jew from "../../public/nextjs/jew.png";
 import burger from "../../public/nextjs/burger.png";
-import port from "../../public/nextjs/prot.png";
+import jew from "../../public/nextjs/jew.png";
 import tech from "../../public/nextjs/technology.png";
+import blog from "../../public/nextjs/blog.png";
 import resume from "../../public/nextjs/python1.png";
 import BMI from "../../public/nextjs/python2.png";
 import Data from "../../public/nextjs/python3.png";
 import mindset from "../../public/nextjs/python4.png";
 import pass from "../../public/nextjs/python5.png";
-import lib from "../../public/nextjs/python6.png"
+import lib from "../../public/nextjs/python6.png";
 
 const ProjectSection: React.FC = () => {
   const { theme } = useTheme();
@@ -35,140 +31,162 @@ const ProjectSection: React.FC = () => {
   const projectSection = useScrollActive(sectionRef);
   const { onSectionChange } = useSection();
 
-  // 🔹 Category state
   const [activeCategory, setActiveCategory] = useState<string>("All");
-  // 🔹 Load More state (default 3 projects = 1 row)
-  const [visibleCount, setVisibleCount] = useState<number>(3);
+  const [visibleCount, setVisibleCount] = useState<number>(6);
 
   useEffect(() => {
     projectSection && onSectionChange!("projects");
   }, [onSectionChange, projectSection]);
 
-  // ✅ Fixed categories
-  const categories = ["All", "Agentic AI", "RAG Systems", "Medical AI", "Next.js", "Full-Stack"];
+  const categories = ["All", "Agentic AI", "RAG Systems", "Medical AI", "Full-Stack"];
 
-  // 🔹 Filtered projects
   const filteredProjects =
     activeCategory === "All"
       ? projects
       : projects.filter((p) => p.type === activeCategory);
 
-  // 🔹 Visible Projects (limited by Load More)
   const visibleProjects = filteredProjects.slice(0, visibleCount);
 
-  // Reset visible count when category changes
   useEffect(() => {
-    setVisibleCount(3); // har category change pe sirf 3 show honge
+    setVisibleCount(6);
   }, [activeCategory]);
 
   return (
-    <section ref={sectionRef} id="projects" className="section">
-      {/* Title */}
+    <section ref={sectionRef} id="projects" className="section relative overflow-hidden">
+      {/* Animated Background Elements */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute top-20 left-10 w-72 h-72 bg-marrsgreen/5 dark:bg-carrigreen/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/5 dark:bg-blue-500/5 rounded-full blur-3xl" />
+      </div>
+
+      {/* Section Header */}
       <motion.div
-        className="project-title text-center relative inline-block"
-        initial={{ y: 60, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
+        ref={elementRef}
+        className="text-center mb-16"
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, amount: 0.3 }}
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
-        <h2 className="section-heading relative inline-block">
-          Featured Projects
+        <motion.h2
+          className="text-4xl md:text-5xl font-bold mb-4"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <span className="gradient-text-green">Featured Projects</span>
           <motion.span
-            className="absolute left-0 -bottom-2 h-[3px] w-full"
+            className="block h-1 w-32 mx-auto mt-4 rounded-full"
             style={{
               backgroundColor:
                 theme === "light" ? "rgb(0, 122, 122)" : "rgb(5, 206, 145)",
             }}
             initial={{ scaleX: 0 }}
             animate={isOnScreen ? { scaleX: 1 } : { scaleX: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.6, delay: 0.2 }}
           />
-        </h2>
+        </motion.h2>
+
+        <motion.p
+          className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          From AI-powered medical diagnostics to autonomous agents — here's what I've built
+        </motion.p>
+
+        {/* Category Filter */}
+        <motion.div
+          className="flex flex-wrap justify-center gap-3 mb-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+        >
+          {categories.map((cat, index) => (
+            <motion.button
+              key={cat}
+              onClick={() => setActiveCategory(cat)}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 + index * 0.05 }}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+                activeCategory === cat
+                  ? "bg-gradient-to-r from-marrsgreen to-marrsgreen/90 dark:from-carrigreen dark:to-carrigreen/90 text-white shadow-lg shadow-marrsgreen/50 dark:shadow-carrigreen/50"
+                  : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-2 border-gray-200 dark:border-gray-700 hover:border-marrsgreen dark:hover:border-carrigreen"
+              }`}
+            >
+              {cat}
+            </motion.button>
+          ))}
+        </motion.div>
       </motion.div>
 
-      {/* Description */}
-      <motion.span
-        className="project-desc text-center block mb-6"
-        ref={elementRef}
-        initial={{ y: 40, opacity: 0 }}
-        whileInView={{ y: 0, opacity: 1 }}
-        viewport={{ once: true, amount: 0.3 }}
-        transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}
-      >
-        “Talk is cheap. Show me the code”? I got you. <br />
-        Here are some of my projects you shouldn&apos;t miss
-      </motion.span>
-
-      {/* 🔹 Category Filter Tabs */}
-      <div className="flex justify-center mb-6 flex-wrap gap-3">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => setActiveCategory(cat)}
-            className={`px-4 py-2 rounded-full border transition-all ${
-              activeCategory === cat
-                ? "bg-marrsgreen text-white dark:bg-carrigreen"
-                : "bg-gray-200 dark:bg-gray-700"
-            }`}
-          >
-            {cat}
-          </button>
-        ))}
-      </div>
-
-      {/* Projects Grid */}
-      <div className="flex flex-wrap">
+      {/* Projects Grid - Bento Layout */}
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {visibleProjects.map((project, index) => (
-          <motion.div
-            key={project.title}
-            initial={{ scale: 0.9, opacity: 0 }}
-            whileInView={{ scale: 1, opacity: 1 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{
-              duration: 0.6,
-              ease: "easeOut",
-              delay: index * 0.15,
-            }}
-            className="w-full sm:w-1/2 lg:w-1/3 p-2"
-          >
-            <ProjectCard index={index} project={project} />
-          </motion.div>
+          <ProjectCardNew key={project.title} project={project} index={index} />
         ))}
       </div>
 
-      {/* Load More Button */}
+      {/* Load More */}
       {visibleCount < filteredProjects.length && (
-        <div className="flex justify-center mt-6">
-          <button
-            onClick={() => setVisibleCount((prev) => prev + 3)} // ab 3-3 load hoga
-            className="px-6 py-2 rounded-full bg-marrsgreen text-white dark:bg-carrigreen hover:opacity-90 transition"
+        <motion.div
+          className="flex justify-center mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.button
+            onClick={() => setVisibleCount((prev) => prev + 6)}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="px-8 py-4 bg-gradient-to-r from-marrsgreen to-marrsgreen/90 dark:from-carrigreen dark:to-carrigreen/90 text-white rounded-full font-semibold text-lg shadow-xl shadow-marrsgreen/50 dark:shadow-carrigreen/50 hover:shadow-2xl transition-shadow"
           >
-            Load More
-          </button>
-        </div>
+            Load More Projects
+            <svg className="inline-block ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+            </svg>
+          </motion.button>
+        </motion.div>
       )}
 
-      {/* GitHub Link */}
+      {/* GitHub CTA */}
       <motion.div
-        className="others text-center mb-16 mt-10"
+        className="text-center mt-16"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
-        viewport={{ once: true, amount: 0.3 }}
+        viewport={{ once: true }}
         transition={{ duration: 0.7, delay: 0.3 }}
       >
-        Other projects can be explored in{" "}
-        <a
+        <p className="text-gray-600 dark:text-gray-400 mb-4">
+          Want to see more? Check out my other projects
+        </p>
+        <motion.a
           href="https://github.com/Ramesha-sheikh"
-          className="font-medium underline link-outline text-marrsgreen dark:text-carrigreen whitespace-nowrap"
+          target="_blank"
+          rel="noopener noreferrer"
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          className="inline-flex items-center gap-2 px-6 py-3 bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white rounded-full font-semibold hover:border-marrsgreen dark:hover:border-carrigreen transition-colors"
         >
-          my github profile
-        </a>
+          <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+            <path fillRule="evenodd" d="M12.316 3.051a1 1 0 01.633 1.265l-4 12a1 1 0 11-1.898-.632l4-12a1 1 0 011.265-.633zM5.707 6.293a1 1 0 010 1.414L3.414 10l2.293 2.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 0zm8.586 0a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L16.586 10l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+          </svg>
+          View GitHub Profile
+        </motion.a>
       </motion.div>
     </section>
   );
 };
 
-// ✅ Projects array ka type field ab sirf fixed categories use karega
 const projects = [
   {
     title: "VisionDX AI - Medical Imaging Platform",
@@ -183,12 +201,11 @@ const projects = [
         </div>
       </div>
     ),
-    desc: "NIC Karachi-registered AI medical imaging startup. Analyzes X-rays, MRI, CT scans, and 25+ medical imaging types with AI-driven diagnostic reports. Production-grade AI vision models for clinical diagnostics.",
-    tags: ["AI Vision", "Medical AI", "Python", "FastAPI", "Gemini API", "Cloud AI"],
+    desc: "NIC Karachi-registered AI medical imaging startup. Analyzes X-rays, MRI, CT scans, and 25+ medical imaging types with AI-driven diagnostic reports.",
+    tags: ["AI Vision", "Medical AI", "Python", "FastAPI", "Gemini API", "Production"],
     liveUrl: "#",
     codeUrl: "#",
     bgColor: "bg-gradient-to-br from-blue-500 to-purple-600",
-    githubApi: "",
   },
   {
     title: "AI-Native Autonomous Agent Suite",
@@ -203,12 +220,11 @@ const projects = [
         </div>
       </div>
     ),
-    desc: "Production multi-agent system with real-time model routing between Gemini, Claude, and Grok. Features persistent memory, file processing, and autonomous task execution using MCP servers.",
-    tags: ["Multi-Agent", "Gemini CLI", "Claude", "MCP Server", "Python", "HITL"],
+    desc: "Production multi-agent system with real-time model routing between Gemini, Claude, and Grok. Features persistent memory and file processing.",
+    tags: ["Multi-Agent", "Gemini CLI", "Claude", "MCP Server", "Python"],
     liveUrl: "#",
     codeUrl: "#",
     bgColor: "bg-gradient-to-br from-emerald-500 to-teal-600",
-    githubApi: "",
   },
   {
     title: "CRM Digital FTE Factory",
@@ -224,12 +240,11 @@ const projects = [
         </div>
       </div>
     ),
-    desc: "24/7 AI Customer Success employee built with Claude Code, OpenAI Agents SDK, FastAPI, PostgreSQL, pgvector, Kafka, Kubernetes, Gmail API, and Twilio WhatsApp. Fully autonomous CRM agent.",
-    tags: ["OpenAI Agents", "FastAPI", "Kafka", "Kubernetes", "pgvector", "Twilio"],
+    desc: "24/7 AI Customer Success employee with Claude Code, OpenAI Agents SDK, FastAPI, PostgreSQL, Kafka, Kubernetes, Gmail & WhatsApp API.",
+    tags: ["OpenAI Agents", "FastAPI", "Kafka", "Kubernetes", "pgvector"],
     liveUrl: "#",
     codeUrl: "#",
     bgColor: "bg-gradient-to-br from-orange-500 to-pink-600",
-    githubApi: "",
   },
   {
     title: "Physical AI Textbook with RAG Chatbot",
@@ -244,12 +259,11 @@ const projects = [
         </div>
       </div>
     ),
-    desc: "Spec-Kit generated AI textbook with Qdrant-backed RAG chatbot, Better Auth authentication, and GitHub Pages deployment. Features semantic search and intelligent Q&A.",
-    tags: ["RAG", "Qdrant", "Vector DB", "Better Auth", "Docusaurus", "Spec-Kit"],
+    desc: "Spec-Kit generated AI textbook with Qdrant-backed RAG chatbot, Better Auth authentication, and GitHub Pages deployment.",
+    tags: ["RAG", "Qdrant", "Vector DB", "Better Auth", "Docusaurus"],
     liveUrl: "#",
     codeUrl: "#",
     bgColor: "bg-gradient-to-br from-violet-500 to-indigo-600",
-    githubApi: "",
   },
   {
     title: "E-Commerce Autonomous Chatbot",
@@ -264,12 +278,11 @@ const projects = [
         </div>
       </div>
     ),
-    desc: "Gemini-powered autonomous chatbot with real-time analytics dashboard. Built with Next.js, Node.js, Sanity CMS. Handles customer queries, product recommendations, and order tracking.",
-    tags: ["Gemini API", "Next.js", "Node.js", "Sanity CMS", "Real-time Analytics"],
+    desc: "Gemini-powered autonomous chatbot with real-time analytics. Built with Next.js, Node.js, Sanity CMS for customer queries and recommendations.",
+    tags: ["Gemini API", "Next.js", "Node.js", "Sanity CMS", "Analytics"],
     liveUrl: "#",
     codeUrl: "#",
     bgColor: "bg-gradient-to-br from-green-500 to-teal-600",
-    githubApi: "",
   },
   {
     title: "Governor Sindh IT Initiative Platform",
@@ -283,34 +296,32 @@ const projects = [
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "Full-stack Next.js and PostgreSQL platform supporting 50,000+ student registrations. Production-grade scalable architecture with real-time data processing.",
-    tags: ["Next.js", "PostgreSQL", "TypeScript", "Tailwind CSS"],
+    desc: "Full-stack Next.js and PostgreSQL platform supporting 50,000+ student registrations. Production-grade scalable architecture.",
+    tags: ["Next.js", "PostgreSQL", "TypeScript", "Tailwind CSS", "Production"],
     liveUrl: "https://govnorsindh-com.vercel.app/",
     codeUrl: "https://github.com/Ramesha-sheikh/govnorsindh.com",
     bgColor: "bg-[#B4BEE0]",
-    githubApi: "https://api.github.com/repos/Ramesha-sheikh/govnorsindh.com",
   },
   {
-    title: " E-commerce  Sofa Website",
+    title: "E-commerce Sofa Website",
     type: "Full-Stack",
     image: (
       <Image
         src={eco}
         sizes="100vw"
         fill
-        alt="Hackathon E-commerce Dashboard"
+        alt="E-commerce Dashboard"
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "Full-stack e-commerce website...",
-    tags: ["Next.js", "Tailwind CSS", "Sanity","Typescript"],
+    desc: "Full-stack e-commerce website with Sanity CMS, payment integration, and admin dashboard.",
+    tags: ["Next.js", "Tailwind CSS", "Sanity", "TypeScript"],
     liveUrl: "https://next-js-ecommerce-hackthone.vercel.app/",
     codeUrl: "https://github.com/Ramesha-sheikh/Marketplace-EcommerceWebsite-nextjs-2025",
     bgColor: "bg-[#B4BEE0]",
-    githubApi: "https://api.github.com/repos/Ramesha-sheikh/Marketplace-EcommerceWebsite-nextjs-2025",
   },
   {
-    title: " Fast Food Website",
+    title: "Fast Food Website",
     type: "Full-Stack",
     image: (
       <Image
@@ -321,55 +332,51 @@ const projects = [
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "Fast Food Website using nextjs",
-    tags: ["Next.js", "Tailwind CSS", "Sanity","Typescript"],
+    desc: "Restaurant website with menu management, online ordering system, and CMS integration.",
+    tags: ["Next.js", "Tailwind CSS", "Sanity", "TypeScript"],
     liveUrl: "https://fast-foodwebsite-next-js.vercel.app/",
     codeUrl: "https://github.com/Ramesha-sheikh/FastFoodwebsite-next.js",
     bgColor: "bg-[#B4BEE0]",
-    githubApi: "https://api.github.com/repos/Ramesha-sheikh/FastFoodwebsite-next.js",
-    
   },
   {
-    title: "Diamandjwellery",
+    title: "Diamond Jewellery",
     type: "Full-Stack",
     image: (
       <Image
         src={jew}
         sizes="100vw"
         fill
-        alt="jwellery web"
+        alt="Jewellery website"
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "A professional, nexjs and typescript website",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS,sanity"],
+    desc: "Luxury jewellery e-commerce platform with product catalog and shopping cart.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Sanity"],
     liveUrl: "https://milstone03-ecommerce-diamandjwellery-website-rameshajaved.vercel.app/",
     codeUrl: "https://github.com/Ramesha-sheikh/Milstone03-Ecommerce-Diamandjwellery-website-Rameshajaved",
     bgColor: "bg-[#FBFBFB]",
-    githubApi: "  https://api.github.com/repos/Ramesha-sheikh/Milstone03-Ecommerce-Diamandjwellery-website-Rameshajaved",
   },
   {
-    title: "Technology webite",
-    type: "Next.js",
+    title: "Technology Website",
+    type: "Full-Stack",
     image: (
       <Image
         src={tech}
         sizes="100vw"
         fill
-        alt="Technology webite"
+        alt="Technology website"
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "Technology webite using typecript next.js tailwind css",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS,sanity"],
+    desc: "Modern technology blog with custom CSS animations and responsive design.",
+    tags: ["Next.js", "TypeScript", "Custom CSS", "Sanity"],
     liveUrl: "https://technology-website-customcss-next-js.vercel.app/",
     codeUrl: "https://github.com/Ramesha-sheikh/Technology-website-customcss-next.js",
     bgColor: "bg-[#EBF4F4]",
-    githubApi: " https://api.github.com/repos/Ramesha-sheikh/Technology-website-customcss-next.js",
   },
-   {
-    title: "Blog website",
-    type: "Next.js",
+  {
+    title: "Blog Website",
+    type: "Full-Stack",
     image: (
       <Image
         src={blog}
@@ -379,15 +386,14 @@ const projects = [
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "Blog website using typecript next.js tailwind css",
-    tags: ["tyescript", "tailwincss", "next.js", "Sanity"],
+    desc: "Full-featured blog platform with Sanity CMS, markdown support, and SEO optimization.",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Sanity"],
     liveUrl: "https://milstone03-blog-website-with-sanity-3pgf.vercel.app/",
     codeUrl: "https://github.com/Ramesha-sheikh/milstone-03-blogwebsite-ramesha-javed-next.js",
     bgColor: "bg-[#EBF4F4]",
-    githubApi: "https://api.github.com/repos/Ramesha-sheikh/milstone-03-blogwebsite-ramesha-javed-next.js",
   },
   {
-    title: "ResumeVault  Python app",
+    title: "ResumeVault Python App",
     type: "Full-Stack",
     image: (
       <Image
@@ -398,97 +404,83 @@ const projects = [
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "Python and streamlit application",
-    tags: ["Python", "Streamlit"],
+    desc: "Python and Streamlit application for resume management and generation.",
+    tags: ["Python", "Streamlit", "Data Processing"],
     liveUrl: "https://resumevaultstreamli.streamlit.app/",
     codeUrl: "https://github.com/Ramesha-sheikh/ResumeVaultap-streamlit-python",
     bgColor: "bg-[#EBF4F4]",
-    githubApi: "https://api.github.com/repos/Ramesha-sheikh/ResumeVaultap-streamlit-python",
-    
-    
   },
   {
-    title: "Unit-convertor python ",
+    title: "Unit Convertor Python",
     type: "Full-Stack",
     image: (
       <Image
         src={BMI}
         sizes="100vw"
         fill
-        alt="Unit-convertor"
+        alt="Unit converter"
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "Python and streamlit application",
-    tags: ["Python", "Streamlit"],
-    liveUrl: " https://bmi-calculator-rameshajaved.streamlit.app/",
-    codeUrl: "https://github.com/Ramesha-sheikh/Unit-convertor--app-python?tab=readme-ov-file",
+    desc: "Python Streamlit unit conversion application with multiple measurement types.",
+    tags: ["Python", "Streamlit", "Math"],
+    liveUrl: "https://bmi-calculator-rameshajaved.streamlit.app/",
+    codeUrl: "https://github.com/Ramesha-sheikh/Unit-convertor--app-python",
     bgColor: "bg-[#EBF4F4]",
-    githubApi:"https://api.github.com/repos/Ramesha-sheikh/Unit-convertor--app-python?tab=readme-ov-file",
-    
-    
-    
   },
-   {
-    title: "Streamlit-Python-fullwebsite-csv-to-excelconverter",
+  {
+    title: "CSV to Excel Converter",
     type: "Full-Stack",
     image: (
       <Image
         src={Data}
         sizes="100vw"
         fill
-        alt="csv-to-excelconverter"
+        alt="Data converter"
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "Python and streamlit application",
-    tags: ["Python", "Streamlit"],
-    liveUrl: " https://bmi-calculator-rameshajaved.streamlit.app/",
+    desc: "Python application for converting CSV files to Excel with data processing features.",
+    tags: ["Python", "Streamlit", "Data"],
+    liveUrl: "https://bmi-calculator-rameshajaved.streamlit.app/",
     codeUrl: "https://github.com/Ramesha-sheikh/Streamlit-python-fullwebsite-csv-to-excelconverter",
     bgColor: "bg-[#EBF4F4]",
-    githubApi:"https://api.github.com/repos/Ramesha-sheikh/Streamlit-python-fullwebsite-csv-to-excelconverter",
-    
   },
   {
-    title: "Streamlit-Python-Growth Mindset Challenge app",
+    title: "Growth Mindset Challenge",
     type: "Full-Stack",
     image: (
       <Image
         src={mindset}
         sizes="100vw"
         fill
-        alt="Growth Mindset Challenge"
+        alt="Mindset app"
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "Python and streamlit application",
-    tags: ["Python", "Streamlit"],
+    desc: "Interactive Python Streamlit app for personal development and mindset tracking.",
+    tags: ["Python", "Streamlit", "Education"],
     liveUrl: "https://rameshajaved-mondset-challange-giaic.streamlit.app/",
     codeUrl: "https://github.com/Ramesha-sheikh/Mindset-project-python-GIAIC",
     bgColor: "bg-[#EBF4F4]",
-    githubApi:" https://api.github.com/repos/Ramesha-sheikh/Mindset-project-python-GIAIC",
-   
   },
   {
-    title: " Password Strength Checker Python app",
+    title: "Password Strength Checker",
     type: "Full-Stack",
     image: (
       <Image
         src={pass}
         sizes="100vw"
         fill
-        alt="Password Strength Checker "
+        alt="Password checker"
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "Python and streamlit application",
-    tags: ["Python", "Streamlit"],
+    desc: "Advanced password strength analysis tool with security recommendations.",
+    tags: ["Python", "Streamlit", "Security"],
     liveUrl: "https://password-strength-project-python-ramesha.streamlit.app/",
     codeUrl: "https://github.com/Ramesha-sheikh/Advance-password-strength-project-Giaic",
     bgColor: "bg-[#EBF4F4]",
-    githubApi:"https://api.github.com/repos/Ramesha-sheikh/Advance-password-strength-project-Giaic",
-    
-   
   },
   {
     title: "Library Management System",
@@ -498,23 +490,16 @@ const projects = [
         src={lib}
         sizes="100vw"
         fill
-        alt="Library Management System"
+        alt="Library system"
         className="transition-transform duration-500 hover:scale-110 object-cover"
       />
     ),
-    desc: "Python and streamlit application",
-    tags: ["Python", "Streamlit"],
+    desc: "Complete library management system with book tracking and user management.",
+    tags: ["Python", "Streamlit", "Database"],
     liveUrl: "https://library-manger-ramesha-javed-python.streamlit.app/",
     codeUrl: "https://github.com/Ramesha-sheikh/Advance-password-strength-project-Giaic",
     bgColor: "bg-[#EBF4F4]",
-    githubApi: "https://api.github.com/repos/Ramesha-sheikh/Advance-password-strength-project-Giaic",
-   
-   
   },
- 
- 
-  
-  
 ];
 
 export default ProjectSection;
