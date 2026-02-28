@@ -1,44 +1,128 @@
+"use client";
+import { motion } from "framer-motion";
+import Link from "next/link";
+
 type Props = {
   noPadding?: boolean;
 };
 
 const Footer: React.FC<Props> = ({ noPadding = false }) => {
+  const currentYear = new Date().getFullYear();
+
   return (
-    <footer
-      className={`${noPadding ? "pb-4" : "pb-24"} md:pb-4 text-center mt-auto`}
-    >
-      <div className="flex justify-center space-x-12 mb-4">
-        {socialLinks.map((social) => (
-          <a
-            key={social.id}
-            href={social.link}
-            title={social.title}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="transform scale-150 md:scale-125 link-outline"
-          >
-            {social.svg}
-          </a>
-        ))}
-      </div>
-      <div>
-        Coded with <span className="sr-only">love</span>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5 mx-1 inline-block mb-1"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-          aria-hidden="true"
-          strokeWidth={2}
-        >
-          <path
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"
-          />
-        </svg>{" "}
-        by <span className="font-semibold">Ramesha Javed</span>
+    <footer className={`${noPadding ? "pb-4" : "pb-24 md:pb-8"} mt-20 border-t border-gray-200 dark:border-gray-800`}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 md:px-20 pt-12 pb-8">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+          {/* Brand Column */}
+          <div className="md:col-span-2">
+            <h3 className="text-2xl font-bold gradient-text-green mb-4">
+              Ramesha Javed
+            </h3>
+            <p className="text-gray-600 dark:text-gray-400 mb-4 max-w-md">
+              AI-Native Full Stack Developer & Founder of VisionDX AI.
+              Building production-grade autonomous agents and intelligent systems.
+            </p>
+            <div className="flex gap-4">
+              {socialLinks.map((social) => (
+                <motion.a
+                  key={social.id}
+                  href={social.link}
+                  title={social.title}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  whileTap={{ scale: 0.95 }}
+                  className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-marrsgreen/10 dark:hover:bg-carrigreen/10 transition-colors"
+                >
+                  {social.svg}
+                </motion.a>
+              ))}
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+              Quick Links
+            </h4>
+            <ul className="space-y-2">
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-gray-600 dark:text-gray-400 hover:text-marrsgreen dark:hover:text-carrigreen transition-colors"
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Contact Info */}
+          <div>
+            <h4 className="text-lg font-semibold mb-4 text-gray-900 dark:text-white">
+              Contact
+            </h4>
+            <ul className="space-y-3">
+              <li>
+                <a
+                  href="mailto:Rameshajaved1@gmail.com"
+                  className="text-gray-600 dark:text-gray-400 hover:text-marrsgreen dark:hover:text-carrigreen transition-colors flex items-center gap-2"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                    <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                  </svg>
+                  Rameshajaved1@gmail.com
+                </a>
+              </li>
+              <li>
+                <a
+                  href="tel:+923130384064"
+                  className="text-gray-600 dark:text-gray-400 hover:text-marrsgreen dark:hover:text-carrigreen transition-colors flex items-center gap-2"
+                >
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                  </svg>
+                  +92 313-0384064
+                </a>
+              </li>
+              <li className="text-gray-600 dark:text-gray-400 flex items-start gap-2">
+                <svg className="w-4 h-4 mt-1" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                </svg>
+                <span>Karachi, Pakistan</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-8 border-t border-gray-200 dark:border-gray-800">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-gray-600 dark:text-gray-400 text-center md:text-left">
+              © {currentYear} Ramesha Javed. Crafted with{" "}
+              <span className="text-red-500">❤️</span> and{" "}
+              <span className="text-marrsgreen dark:text-carrigreen font-semibold">AI</span>
+            </p>
+            <div className="flex gap-6 text-sm">
+              <a
+                href="#"
+                className="text-gray-600 dark:text-gray-400 hover:text-marrsgreen dark:hover:text-carrigreen transition-colors"
+              >
+                Privacy Policy
+              </a>
+              <a
+                href="#"
+                className="text-gray-600 dark:text-gray-400 hover:text-marrsgreen dark:hover:text-carrigreen transition-colors"
+              >
+                Terms of Service
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </footer>
   );
@@ -52,9 +136,9 @@ const socialLinks = [
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        className="dark:fill-bglight hover:fill-marrsgreen dark:hover:fill-carrigreen"
+        width="20"
+        height="20"
+        className="dark:fill-bglight hover:fill-marrsgreen dark:hover:fill-carrigreen transition-colors"
       >
         <path
           fillRule="evenodd"
@@ -67,53 +151,43 @@ const socialLinks = [
   {
     id: 2,
     title: "Ramesha's LinkedIn Profile",
-    link: "https://www.linkedin.com/in/rameesha20/",
+    link: "https://www.linkedin.com/in/rameesha20",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
+        width="20"
+        height="20"
         viewBox="0 0 24 24"
-        className="dark:fill-bglight hover:fill-marrsgreen dark:hover:fill-carrigreen"
+        className="dark:fill-bglight hover:fill-marrsgreen dark:hover:fill-carrigreen transition-colors"
       >
         <path d="M20 3H4a1 1 0 0 0-1 1v16a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V4a1 1 0 0 0-1-1zM8.339 18.337H5.667v-8.59h2.672v8.59zM7.003 8.574a1.548 1.548 0 1 1 0-3.096 1.548 1.548 0 0 1 0 3.096zm11.335 9.763h-2.669V14.16c0-.996-.018-2.277-1.388-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248h-2.667v-8.59h2.56v1.174h.037c.355-.675 1.227-1.387 2.524-1.387 2.704 0 3.203 1.778 3.203 4.092v4.71z"></path>
       </svg>
     ),
   },
   {
-  id: 3,
-  title: "Ramesha's Instagram",
-  link: "https://www.instagram.com/ramesha.javed.2025?igsh=YzljYTk1ODg3Zg==",
-  svg: (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      className="dark:fill-bglight hover:fill-marrsgreen dark:hover:fill-carrigreen"
-      aria-hidden="true"
-      focusable="false"
-    >
-      <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm5 6.5A4.5 4.5 0 1 0 16.5 13 4.5 4.5 0 0 0 12 8.5zm6.8-3.4a1.2 1.2 0 1 1-1.2 1.2 1.2 1.2 0 0 1 1.2-1.2z" />
-    </svg>
-  ),
-},
-
-  {
-    id: 4,
+    id: 3,
     title: "Ramesha's Facebook Profile",
-    link: "https://www.facebook.com/ramesha.javed.2025/",
+    link: "https://www.facebook.com/ramesha.javed.2025",
     svg: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        width="24"
-        height="24"
-        className="dark:fill-bglight hover:fill-marrsgreen dark:hover:fill-carrigreen"
+        width="20"
+        height="20"
+        className="dark:fill-bglight hover:fill-marrsgreen dark:hover:fill-carrigreen transition-colors"
       >
         <path d="M12.001 2.002c-5.522 0-9.999 4.477-9.999 9.999 0 4.99 3.656 9.126 8.437 9.879v-6.988h-2.54v-2.891h2.54V9.798c0-2.508 1.493-3.891 3.776-3.891 1.094 0 2.24.195 2.24.195v2.459h-1.264c-1.24 0-1.628.772-1.628 1.563v1.875h2.771l-.443 2.891h-2.328v6.988C18.344 21.129 22 16.992 22 12.001c0-5.522-4.477-9.999-9.999-9.999z" />
       </svg>
     ),
   },
+];
+
+const quickLinks = [
+  { href: "#whoami", label: "About" },
+  { href: "#skills", label: "Skills" },
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#blog", label: "Blog" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export default Footer;

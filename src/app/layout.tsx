@@ -5,6 +5,7 @@ import "./globals.css";
 import { ProvideSection } from "@/context/section";
 import { ThemeProvider } from "next-themes";
 import AIParticles from "@/components/AIParticles";
+import FloatingShapes from "@/components/FloatingShapes";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -62,6 +63,7 @@ export default function RootLayout({
           disableTransitionOnChange
         >
           <AIParticles />
+          <FloatingShapes />
           <ProvideSection>{children}</ProvideSection>
         </ThemeProvider>
       </body>
