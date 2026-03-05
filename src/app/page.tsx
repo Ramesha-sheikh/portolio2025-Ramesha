@@ -1,25 +1,24 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-// src/app/page.tsx
-import AppHead from "@/components/AppHead";
-import HeroSection from "@/sections/HeroSection";
+import { Metadata } from "next";
+import ModernHeroSection from "@/sections/ModernHeroSection";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import TestimonialsSection from "@/sections/TestimonialsSection";
 import BlogSection from "@/sections/BlogSection";
 import CTASection from "@/components/CTASection";
 import { getAllPosts } from "../utils/api";
-import { MdxMeta } from "@/types/mxd"; // Import shared MdxMeta type
+import { MdxMeta } from "@/types/mxd";
 
-const meta = {
-  description:
-    "Ramesha Javed - Certified Agentic AI Developer & Founder of VisionDX AI. 4x Certified in Agentic AI, Prompt Engineering. Expert in building production-grade autonomous agents using Spec-Kit, Gemini CLI, MCP servers, OpenAI SDK, and RAG systems. Based in Karachi, Pakistan.",
-  author: "Ramesha Javed",
-  type: "website",
-  ogImage: `${process.env.NEXT_PUBLIC_URL}/favicons/mstile-150x150.png`,
-  siteName: "Ramesha Javed - Certified Agentic AI Developer",
-  imageAlt: "Ramesha Javed portfolio - Certified AI Developer & Startup Founder",
+export const metadata: Metadata = {
+  title: "Ramesha Javed - Agentic AI Developer & Founder VisionDX AI",
+  description: "Certified Agentic AI Developer & Founder of VisionDX AI. Expert in building production-grade autonomous agents, RAG systems, and AI-powered applications.",
+  keywords: ["Agentic AI", "VisionDX AI", "Autonomous Agents", "RAG Systems", "AI Developer", "Pakistan"],
+  openGraph: {
+    title: "Ramesha Javed - Agentic AI Developer",
+    description: "Certified Agentic AI Developer building next-generation AI systems",
+    type: "website",
+  },
 };
 
-// Async server component
 export default async function Home() {
   const items: any[] = await getAllPosts([
     "coverImage",
@@ -29,8 +28,9 @@ export default async function Home() {
     "excerpt",
     "datetime",
     "featured",
-    "date", // Add date to the fields fetched
+    "date",
   ]);
+
   const blogPosts: MdxMeta[] = items.map(item => ({
     slug: item.slug,
     title: item.title,
@@ -39,17 +39,12 @@ export default async function Home() {
     coverImageAlt: item.coverImageAlt,
     datetime: item.datetime,
     featured: item.featured,
-    date: item.date || item.datetime, // Fallback to datetime if date is missing
+    date: item.date || item.datetime,
   }));
 
   return (
     <>
-      <AppHead
-        title="Ramesha Javed - Agentic AI Developer & Founder VisionDX AI"
-        url={`${process.env.NEXT_PUBLIC_URL}`}
-        meta={meta}
-      />
-      <HeroSection />
+      <ModernHeroSection />
       <FeaturedProjects />
       <TestimonialsSection />
       <BlogSection posts={blogPosts} />
