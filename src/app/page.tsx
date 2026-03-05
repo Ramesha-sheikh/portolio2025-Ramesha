@@ -7,6 +7,7 @@ import Header from "@/components/Header";
 import SocialLinks from "@/components/SocialLinks";
 import HeroSection from "@/sections/HeroSection";
 import FeaturedProjects from "@/components/FeaturedProjects";
+import TestimonialsSection from "@/sections/TestimonialsSection";
 import BlogSection from "@/sections/BlogSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
@@ -61,6 +62,7 @@ export default async function Home() {
           <main id="main">
             <HeroSection />
             <FeaturedProjects />
+            <TestimonialsSection />
             <BlogSection posts={blogPosts} />
             <CTASection />
           </main>
