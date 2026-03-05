@@ -1,5 +1,6 @@
 "use client";
 import { useRef, useState } from "react";
+import type { ReactElement } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import Image from "next/image";
 
@@ -7,7 +8,7 @@ interface ProjectCardProps {
   project: {
     title: string;
     type: string;
-    image: JSX.Element;
+    image: ReactElement;
     desc: string;
     tags: string[];
     liveUrl: string;

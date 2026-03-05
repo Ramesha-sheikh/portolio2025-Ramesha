@@ -1,6 +1,8 @@
 {
-  "name": "my-project",
-  "version": "0.1.0",
+  "name": "ramesha-javed-portfolio",
+  "version": "2.0.0",
+  "description": "Professional portfolio of Ramesha Javed - Certified Agentic AI Developer & Founder of VisionDX AI",
+  "author": "Ramesha Javed",
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",

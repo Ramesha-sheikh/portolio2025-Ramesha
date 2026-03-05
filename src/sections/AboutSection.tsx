@@ -52,7 +52,7 @@ const AboutSection: React.FC = () => {
           />
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-          From code enthusiast to AI startup founder — here's my journey
+          From code enthusiast to AI startup founder — here&apos;s my journey
         </p>
       </motion.div>
 
@@ -130,25 +130,25 @@ const AboutSection: React.FC = () => {
           {/* Intro Paragraph */}
           <div className="prose prose-lg dark:prose-invert max-w-none">
             <p className="text-xl leading-relaxed text-gray-700 dark:text-gray-300">
-              Hey there! 👋 I'm <span className="font-bold text-marrsgreen dark:text-carrigreen">Ramesha Javed</span>,
+              Hey there! 👋 I&apos;m <span className="font-bold text-marrsgreen dark:text-carrigreen">Ramesha Javed</span>,
               an <strong>Agentic AI Engineer</strong> who loves turning complex AI concepts into
               production-ready solutions that actually solve real problems.
             </p>
 
             <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-400">
               As the <strong className="text-gray-800 dark:text-gray-200">Founder & CEO of VisionDX AI</strong>,
-              I'm on a mission to revolutionize medical diagnostics using AI. We're building systems that
+              I&apos;m on a mission to revolutionize medical diagnostics using AI. We&apos;re building systems that
               analyze <strong className="text-marrsgreen dark:text-carrigreen">25+ types of medical images</strong> —
               from X-rays to MRIs — helping doctors make faster, more accurate diagnoses.
             </p>
 
             <p className="text-lg leading-relaxed text-gray-600 dark:text-gray-400">
-              But that's not all! I specialize in building <strong className="text-gray-800 dark:text-gray-200">autonomous AI agents</strong> using
+              But that&apos;s not all! I specialize in building <strong className="text-gray-800 dark:text-gray-200">autonomous AI agents</strong> using
               cutting-edge tech like <em className="text-marrsgreen dark:text-carrigreen not-italic font-semibold">Spec-Kit</em>,
               <em className="text-marrsgreen dark:text-carrigreen not-italic font-semibold">Gemini CLI</em>,
               <em className="text-marrsgreen dark:text-carrigreen not-italic font-semibold">MCP servers</em>, and
               <em className="text-marrsgreen dark:text-carrigreen not-italic font-semibold">RAG systems</em>.
-              From multi-agent orchestration to 24/7 AI CRM employees — I've built them all.
+              From multi-agent orchestration to 24/7 AI CRM employees — I&apos;ve built them all.
             </p>
           </div>
 
@@ -253,7 +253,7 @@ const AboutSection: React.FC = () => {
 };
 
 const quickFacts = [
-  { icon: "🏆", value: "4", label: "Hackathons Won" },
+  { icon: "🎓", value: "4", label: "Certifications" },
   { icon: "💼", value: "25+", label: "Projects" },
   { icon: "👥", value: "50K+", label: "Users" },
   { icon: "⭐", value: "500+", label: "Community" },
@@ -288,11 +288,23 @@ const educationInfo = [
     list: [
       "Multi-Agent Orchestration & MCP Servers",
       "Spec-Kit Framework & Agentic Systems",
-      "Production AI Deployment"
+      "Production AI Deployment",
+      "Certified: Agentic AI Level 1 & Professional Level 2 Developer"
     ],
   },
   {
     id: 2,
+    icon: "💡",
+    title: "Prompt & Context Engineering Specialist",
+    subTitle: "Presidential Initiative for AI & Computing | Jan 2026",
+    list: [
+      "Advanced Prompt Engineering Techniques",
+      "Context Management for AI Systems",
+      "Certified: Level 1 Developer"
+    ],
+  },
+  {
+    id: 3,
     icon: "🎓",
     title: "Full Stack + Agentic AI Specialization",
     subTitle: "Governor Sindh Initiative (GIAIC) | 2024-Present",
@@ -303,21 +315,14 @@ const educationInfo = [
     ],
   },
   {
-    id: 3,
-    icon: "🎯",
-    title: "Bachelor's in Computer Science",
-    subTitle: "University of Karachi | 2019-2022",
-    list: ["Software Engineering Foundation"],
-  },
-  {
     id: 4,
-    icon: "🏅",
-    title: "Hackathon Achievements",
-    subTitle: "Multiple AI Competitions | 2025-2026",
+    icon: "🎯",
+    title: "Entrepreneurship & Business Development",
+    subTitle: "Pakistan Freelancers Association (PAFLA) | Aug 2025",
     list: [
-      "Physical AI Textbook with RAG",
-      "Personal AI Employee System",
-      "CRM Digital FTE Factory"
+      "From Freelancers to Founder 3.0 Program",
+      "Building Digital Reputation Engine",
+      "Global Opportunities Development"
     ],
   },
 ];

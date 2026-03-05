@@ -6,24 +6,21 @@ import SkipToMain from "@/components/SkipToMain";
 import Header from "@/components/Header";
 import SocialLinks from "@/components/SocialLinks";
 import HeroSection from "@/sections/HeroSection";
-import AboutSection from "@/sections/AboutSection";
-import SkillsSection from "@/sections/SkillsSection";
-import ExperienceSection from "@/sections/ExperienceSection";
-import ProjectSection from "@/sections/ProjectSection";
+import FeaturedProjects from "@/components/FeaturedProjects";
 import BlogSection from "@/sections/BlogSection";
-import ContactSection from "@/sections/ContactSection";
+import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
 import { getAllPosts } from "../utils/api";
 import { MdxMeta } from "@/types/mxd"; // Import shared MdxMeta type
 
 const meta = {
   description:
-    "Ramesha Javed - AI-Native Full Stack Developer & Founder of VisionDX AI. Expert in building production-grade autonomous agents using Spec-Kit, Gemini CLI, MCP servers, OpenAI SDK, and RAG systems. Based in Karachi, Pakistan.",
+    "Ramesha Javed - Certified Agentic AI Developer & Founder of VisionDX AI. 4x Certified in Agentic AI, Prompt Engineering. Expert in building production-grade autonomous agents using Spec-Kit, Gemini CLI, MCP servers, OpenAI SDK, and RAG systems. Based in Karachi, Pakistan.",
   author: "Ramesha Javed",
   type: "website",
   ogImage: `${process.env.NEXT_PUBLIC_URL}/favicons/mstile-150x150.png`,
-  siteName: "Ramesha Javed - Agentic AI Developer",
-  imageAlt: "Ramesha Javed portfolio - AI Developer & Startup Founder",
+  siteName: "Ramesha Javed - Certified Agentic AI Developer",
+  imageAlt: "Ramesha Javed portfolio - Certified AI Developer & Startup Founder",
 };
 
 // Async server component
@@ -63,12 +60,9 @@ export default async function Home() {
           <Header />
           <main id="main">
             <HeroSection />
-            <AboutSection />
-            <SkillsSection />
-            <ExperienceSection />
-            <ProjectSection />
+            <FeaturedProjects />
             <BlogSection posts={blogPosts} />
-            <ContactSection />
+            <CTASection />
           </main>
           <SocialLinks page="index" />
           <Footer />
