@@ -54,9 +54,5 @@ export default function ProjectDetailPage({ params }: { params: { slug: string }
     notFound();
   }
 
-  return (
-    <main className="min-h-screen">
-      <ProjectDetailLayout project={project} />
-    </main>
-  );
+  return <ProjectDetailLayout project={project} />;
 }

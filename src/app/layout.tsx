@@ -6,6 +6,11 @@ import { ProvideSection } from "@/context/section";
 import { ThemeProvider } from "next-themes";
 import AIParticles from "@/components/AIParticles";
 import FloatingShapes from "@/components/FloatingShapes";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
+import SocialLinks from "@/components/SocialLinks";
+import SkipToMain from "@/components/SkipToMain";
+import Loader from "@/components/Loader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -62,9 +67,22 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <AIParticles />
-          <FloatingShapes />
-          <ProvideSection>{children}</ProvideSection>
+          <Loader>Ramesha.dev</Loader>
+          <div className="bg-bglight dark:bg-bgdark overflow-hidden">
+            <div className="selection:bg-marrsgreen selection:text-bglight dark:selection:bg-carrigreen dark:selection:text-bgdark">
+              <AIParticles />
+              <FloatingShapes />
+              <SkipToMain />
+              <Header />
+              <ProvideSection>
+                <main id="main">
+                  {children}
+                </main>
+              </ProvideSection>
+              <SocialLinks page="index" />
+              <Footer />
+            </div>
+          </div>
         </ThemeProvider>
       </body>
     </html>

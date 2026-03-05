@@ -19,9 +19,5 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  return (
-    <main className="min-h-screen">
-      <ContactSection />
-    </main>
-  );
+  return <ContactSection />;
 }

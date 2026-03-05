@@ -8,7 +8,7 @@ export default function ProjectsPage() {
   const projects = getAllProjects();
 
   return (
-    <main className="min-h-screen bg-bglight dark:bg-bgdark py-24 px-4 sm:px-6 lg:px-8">
+    <div className="py-24 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <motion.div
@@ -30,6 +30,6 @@ export default function ProjectsPage() {
         {/* Projects Grid */}
         <BentoGrid projects={projects} />
       </div>
-    </main>
+    </div>
   );
 }

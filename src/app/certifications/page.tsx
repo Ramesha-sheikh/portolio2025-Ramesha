@@ -20,9 +20,5 @@ export const metadata: Metadata = {
 };
 
 export default function CertificationsPage() {
-  return (
-    <main className="min-h-screen">
-      <CertificationsSection />
-    </main>
-  );
+  return <CertificationsSection />;
 }
