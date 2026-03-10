@@ -1,0 +1,87 @@
+
+> ramesha-javed-portfolio@2.0.0 build
+> next build --turbopack
+
+   ▲ Next.js 15.5.2 (Turbopack)
+   - Environments: .env.local
+
+   Creating an optimized production build ...
+Browserslist: browsers data (caniuse-lite) is 7 months old. Please run:
+  npx update-browserslist-db@latest
+  Why you should do it regularly: https://github.com/browserslist/update-db#readme
+ ✓ Finished writing to disk in 919ms
+ ✓ Compiled successfully in 49s
+   Linting and checking validity of types ...
+
+./src/components/FeaturedProjects.tsx
+4:8  Warning: 'Link' is defined but never used.  @typescript-eslint/no-unused-vars
+5:10  Warning: 'ArrowRight' is defined but never used.  @typescript-eslint/no-unused-vars
+219:9  Warning: 'featuredProjects' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./src/components/ProjectDetailLayout.tsx
+95:15  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+358:86  Warning: `"` can be escaped with `&quot;`, `&ldquo;`, `&#34;`, `&rdquo;`.  react/no-unescaped-entities
+400:23  Warning: Using `<img>` could result in slower LCP and higher bandwidth. Consider using `<Image />` from `next/image` or a custom image loader to automatically optimize images. This may incur additional usage or cost from your provider. See: https://nextjs.org/docs/messages/no-img-element  @next/next/no-img-element
+
+./src/sections/CertificationsSection.tsx
+25:9  Warning: 'isSecOnScreen' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+26:11  Warning: 'theme' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+27:9  Warning: 'certSection' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+28:11  Warning: 'onSectionChange' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+./src/sections/ContactSection.tsx
+160:52  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+173:38  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+345:49  Warning: `'` can be escaped with `&apos;`, `&lsquo;`, `&#39;`, `&rsquo;`.  react/no-unescaped-entities
+
+./src/sections/ExperienceSection.tsx
+24:9  Warning: 'isOnScreen' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+25:11  Warning: 'theme' is assigned a value but never used.  @typescript-eslint/no-unused-vars
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/app/api-reference/config/eslint#disabling-rules
+   Collecting page data ...
+   Generating static pages (0/21) ...
+   Generating static pages (5/21) 
+ ⚠ metadataBase property in metadata export is not set for resolving social open graph or twitter images, using "http://localhost:3000". See https://nextjs.org/docs/app/api-reference/functions/generate-metadata#metadatabase
+   Generating static pages (10/21) 
+   Generating static pages (15/21) 
+ ✓ Generating static pages (21/21)
+   Finalizing page optimization ...
+   Collecting build traces ...
+
+Route (app)                                                      Size  First Load JS
+┌ ○ /                                                         14.8 kB         212 kB
+├ ○ /_not-found                                                   0 B         198 kB
+├ ○ /about                                                      10 kB         208 kB
+├ ƒ /api/contact                                                  0 B            0 B
+├ ○ /blog                                                       52 kB         250 kB
+├ ● /blog/posts/[slug]                                        8.45 kB         206 kB
+├   ├ /blog/posts/my-first-blog
+├   ├ /blog/posts/hola
+├   ├ /blog/posts/how-do-i-develop-my-portfolio-website-blog
+├   └ /blog/posts/my-journey-from-html-to-ai-agents
+├ ○ /certifications                                           10.3 kB         208 kB
+├ ○ /contact                                                  4.57 kB         202 kB
+├ ○ /experience                                               3.71 kB         201 kB
+├ ○ /projects                                                 6.66 kB         204 kB
+├ ● /projects/[slug]                                          11.5 kB         209 kB
+├   ├ /projects/visiondx-ai-medical-imaging
+├   ├ /projects/ai-autonomous-agent-suite
+├   └ /projects/crm-digital-fte-factory
+├ ○ /robots.txt                                                   0 B            0 B
+└ ○ /sitemap.xml                                                  0 B            0 B
++ First Load JS shared by all                                  211 kB
+  ├ chunks/186a5969fe5c6514.js                                18.9 kB
+  ├ chunks/3303fc834eebc704.js                                37.5 kB
+  ├ chunks/54afae82ba38f00b.js                                17.2 kB
+  ├ chunks/82bfd7a100621a81.js                                26.9 kB
+  ├ chunks/a468de21e3815fb8.js                                20.4 kB
+  ├ chunks/cfbd2f33f902f4e8.js                                58.9 kB
+  ├ chunks/8a9a93338078225c.css                               13.7 kB
+  └ other shared chunks (total)                               17.7 kB
+
+
+○  (Static)   prerendered as static content
+●  (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƒ  (Dynamic)  server-rendered on demand
+

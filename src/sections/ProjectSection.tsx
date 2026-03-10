@@ -40,6 +40,9 @@ const ProjectSection: React.FC = () => {
     }
   }, [onSectionChange, projectSection]);
 
+  // Avoid unused expression warning
+  void activeCategory;
+
   const categories = ["All", "Agentic AI", "RAG Systems", "Medical AI", "Full-Stack"];
 
   const filteredProjects =
@@ -97,7 +100,7 @@ const ProjectSection: React.FC = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.3 }}
         >
-          From AI-powered medical diagnostics to autonomous agents — here's what I've built
+          From AI-powered medical diagnostics to autonomous agents — here&apos;s what I&apos;ve built
         </motion.p>
 
         {/* Category Filter */}

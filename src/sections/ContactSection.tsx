@@ -157,7 +157,7 @@ const ContactSection: React.FC = () => {
         transition={{ duration: 0.7, ease: "easeOut" }}
       >
         <h2 className="text-4xl md:text-5xl font-bold mb-4">
-          <span className="gradient-text-green">Let's Work Together</span>
+          <span className="gradient-text-green">Let&apos;s Work Together</span>
           <motion.span
             className="block h-1 w-32 mx-auto mt-4 rounded-full"
             style={{
@@ -170,7 +170,7 @@ const ContactSection: React.FC = () => {
           />
         </h2>
         <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto mt-6">
-          Have a project in mind? Let's create something amazing together!
+          Have a project in mind? Let&apos;s create something amazing together!
         </p>
       </motion.div>
 
@@ -189,7 +189,7 @@ const ContactSection: React.FC = () => {
               Get in Touch
             </h3>
             <p className="text-gray-600 dark:text-gray-400 leading-relaxed">
-              I'm always excited to discuss new opportunities, collaborations, or just chat about AI and technology. Feel free to reach out!
+              I&apos;m always excited to discuss new opportunities, collaborations, or just chat about AI and technology. Feel free to reach out!
             </p>
           </div>
 
@@ -342,7 +342,7 @@ const ContactSection: React.FC = () => {
                   animate={{ opacity: 1, y: 0 }}
                   className="p-4 bg-green-100 dark:bg-green-900/30 border border-green-500 rounded-xl text-green-700 dark:text-green-400"
                 >
-                  ✅ Message sent successfully! I'll get back to you soon.
+                  ✅ Message sent successfully! I&apos;ll get back to you soon.
                 </motion.div>
               )}
               {submitStatus === "error" && (

@@ -19,7 +19,7 @@ const AIChatBot: React.FC = () => {
     {
       id: "welcome",
       role: "assistant",
-      content: "Hi! I'm Ramesha's AI Assistant. Ask me anything about him in English or Roman Urdu! 🤖",
+      content: "Hi! I&apos;m Ramesha&apos;s AI Assistant. Ask me anything about him in English or Roman Urdu! 🤖",
       timestamp: new Date(),
     },
   ]);

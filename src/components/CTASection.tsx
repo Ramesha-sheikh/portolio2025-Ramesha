@@ -30,7 +30,7 @@ const CTASection: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6"
             >
-              Let's Build Something{" "}
+              Let&apos;s Build Something{" "}
               <span className="block mt-2 text-white/90">Amazing Together</span>
             </motion.h2>
 
@@ -42,7 +42,7 @@ const CTASection: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="text-xl sm:text-2xl text-white/90 mb-12 max-w-3xl mx-auto"
             >
-              Have a project in mind? Whether it's AI agents, computer vision, or full-stack development - I'm here to help bring your ideas to life.
+              Have a project in mind? Whether it&apos;s AI agents, computer vision, or full-stack development - I&apos;m here to help bring your ideas to life.
             </motion.p>
 
             {/* CTA Buttons */}
