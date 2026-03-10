@@ -1,12 +1,11 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Metadata } from "next";
 import ModernHeroSection from "@/sections/ModernHeroSection";
+import IntelligentSolutionsSection from "@/sections/IntelligentSolutionsSection";
+import WhyWorkWithMeSection from "@/sections/WhyWorkWithMeSection";
 import FeaturedProjects from "@/components/FeaturedProjects";
 import TestimonialsSection from "@/sections/TestimonialsSection";
-import BlogSection from "@/sections/BlogSection";
-import CTASection from "@/components/CTASection";
-import { getAllPosts } from "../utils/api";
-import { MdxMeta } from "@/types/mxd";
+import FAQSection from "@/sections/FAQSection";
+import PortfolioCTASection from "@/sections/PortfolioCTASection";
 
 export const metadata: Metadata = {
   title: "Ramesha Javed - Agentic AI Developer & Founder VisionDX AI",
@@ -19,36 +18,16 @@ export const metadata: Metadata = {
   },
 };
 
-export default async function Home() {
-  const items: any[] = await getAllPosts([
-    "coverImage",
-    "coverImageAlt",
-    "slug",
-    "title",
-    "excerpt",
-    "datetime",
-    "featured",
-    "date",
-  ]);
-
-  const blogPosts: MdxMeta[] = items.map(item => ({
-    slug: item.slug,
-    title: item.title,
-    excerpt: item.excerpt,
-    coverImage: item.coverImage,
-    coverImageAlt: item.coverImageAlt,
-    datetime: item.datetime,
-    featured: item.featured,
-    date: item.date || item.datetime,
-  }));
-
+export default function Home() {
   return (
     <>
       <ModernHeroSection />
+      <IntelligentSolutionsSection />
+      <WhyWorkWithMeSection />
       <FeaturedProjects />
+      <PortfolioCTASection />
       <TestimonialsSection />
-      <BlogSection posts={blogPosts} />
-      <CTASection />
+      <FAQSection />
     </>
   );
 }

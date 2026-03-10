@@ -52,11 +52,11 @@ const BlogSection: React.FC<Props> = ({ posts }) => {
     }
   }, [blogSection, onSectionChange]);
 
-  const highlightColor = theme === "light" ? "rgb(0, 122, 122)" : "rgb(5 206 145)";
+  const highlightColor = theme === "light" ? "rgb(0, 122, 122)" : "rgb(52, 211, 153)";
 
   return (
-    <div className="bg-[#F5F5F5] dark:bg-[#1B2731]">
-      <section ref={sectionRef} id="blog" className="section md:px-10">
+    <div className="bg-transparent">
+      <section ref={sectionRef} id="blog" className="section md:px-10 py-20">
         <div className="text-center">
           {/* ✅ RoughNotation replaced */}
           <MotionUnderline active={isOnScreen} color={highlightColor}>

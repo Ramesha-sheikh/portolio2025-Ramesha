@@ -43,12 +43,22 @@ const ContactSection: React.FC = () => {
         setFormData({ name: "", email: "", message: "" });
         setTimeout(() => setSubmitStatus("idle"), 5000);
       } else {
-        setSubmitStatus("error");
+        // Fallback: Open email client
+        const subject = encodeURIComponent(`Portfolio Contact Form: ${formData.name}`);
+        const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
+        window.open(`mailto:Rameshajaved1@gmail.com?subject=${subject}&body=${body}`, "_blank");
+        setSubmitStatus("success");
+        setFormData({ name: "", email: "", message: "" });
         setTimeout(() => setSubmitStatus("idle"), 5000);
       }
     } catch (error) {
       console.error(error);
-      setSubmitStatus("error");
+      // Fallback: Open email client
+      const subject = encodeURIComponent(`Portfolio Contact Form: ${formData.name}`);
+      const body = encodeURIComponent(`Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`);
+      window.open(`mailto:Rameshajaved1@gmail.com?subject=${subject}&body=${body}`, "_blank");
+      setSubmitStatus("success");
+      setFormData({ name: "", email: "", message: "" });
       setTimeout(() => setSubmitStatus("idle"), 5000);
     } finally {
       setIsSubmitting(false);
@@ -134,7 +144,7 @@ const ContactSection: React.FC = () => {
       {/* Background Decoration */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-20 right-10 w-96 h-96 bg-marrsgreen/5 dark:bg-carrigreen/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 left-10 w-72 h-72 bg-purple-500/5 dark:bg-blue-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 left-10 w-72 h-72 bg-marrsgreen/5 dark:bg-carrigreen/5 rounded-full blur-3xl" />
       </div>
 
       {/* Section Header */}
@@ -339,9 +349,9 @@ const ContactSection: React.FC = () => {
                 <motion.div
                   initial={{ opacity: 0, y: -10 }}
                   animate={{ opacity: 1, y: 0 }}
-                  className="p-4 bg-red-100 dark:bg-red-900/30 border border-red-500 rounded-xl text-red-700 dark:text-red-400"
+                  className="p-4 bg-yellow-100 dark:bg-yellow-900/30 border border-yellow-500 rounded-xl text-yellow-700 dark:text-yellow-400"
                 >
-                  ❌ Failed to send message. Please try again or email me directly.
+                  ⚠️ Opening email client... Please send your message directly.
                 </motion.div>
               )}
             </form>

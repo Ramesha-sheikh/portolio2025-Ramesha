@@ -9,7 +9,7 @@ const FloatingShapes: React.FC = () => {
       top: "10%",
       left: "5%",
       duration: 20,
-      gradient: "from-blue-400/20 to-purple-500/20",
+      gradient: "from-emerald-400/20 to-teal-500/20",
       blur: "blur-3xl",
     },
     {
@@ -18,7 +18,7 @@ const FloatingShapes: React.FC = () => {
       top: "60%",
       left: "80%",
       duration: 25,
-      gradient: "from-pink-400/20 to-red-500/20",
+      gradient: "from-teal-400/20 to-emerald-500/20",
       blur: "blur-3xl",
     },
     {
@@ -36,7 +36,7 @@ const FloatingShapes: React.FC = () => {
       top: "80%",
       left: "10%",
       duration: 22,
-      gradient: "from-yellow-400/20 to-orange-500/20",
+      gradient: "from-emerald-400/20 to-green-500/20",
       blur: "blur-3xl",
     },
     {
@@ -45,7 +45,7 @@ const FloatingShapes: React.FC = () => {
       top: "20%",
       left: "75%",
       duration: 28,
-      gradient: "from-indigo-400/20 to-blue-500/20",
+      gradient: "from-teal-400/20 to-emerald-500/20",
       blur: "blur-3xl",
     },
   ];

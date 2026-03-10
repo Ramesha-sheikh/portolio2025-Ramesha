@@ -18,7 +18,7 @@ const SkillsSection: React.FC = () => {
 
   useEffect(() => {
     if (onSectionChange) {
-      skillsSection ? onSectionChange("skills") : onSectionChange("");
+      onSectionChange(skillsSection ? "skills" : "");
     }
   }, [skillsSection, onSectionChange]);
 

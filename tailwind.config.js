@@ -27,18 +27,18 @@ module.exports = {
     extend: {
       colors: {
         bglight: "#F9FAFB",
-        marrslight: "#1C9A9A",
-        marrsgreen: "#007A7A",
-        marrsdark: "#004D4D",
+        marrslight: "#10b981", // Emerald (emerald-500)
+        marrsgreen: "#059669", // Emerald (emerald-600)
+        marrsdark: "#047857", // Dark Emerald (emerald-700)
         cardlight: "#EFF3F3",
 
         // bgdark: "#2D2D2D",
-        bgdark: "#1D2A35",
-        carrilight: "#57DCB4",
-        carrigreen: "#05CE91",
-        carridark: "#00835B",
+        bgdark: "#0a3d3d", // Dark Teal
+        carrilight: "#34d399", // Emerald (emerald-400)
+        carrigreen: "#10b981", // Emerald (emerald-500)
+        carridark: "#047857", // Dark Emerald (emerald-700)
         // carddark: "#383838",
-        carddark: "#22323F",
+        carddark: "#0d4a4a", // Teal Dark
         textlight: "#F9FAFB",
       },
     },

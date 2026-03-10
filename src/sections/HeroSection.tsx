@@ -1,6 +1,5 @@
 "use client";
 import { motion, useScroll, useTransform } from "framer-motion";
-import Link from "next/link";
 import { useRef } from "react";
 import TypingAnimation from "@/components/TypingAnimation";
 
@@ -161,6 +160,54 @@ const HeroSection: React.FC = () => {
               </svg>
             </span>
           </motion.a>
+        </motion.div>
+
+        {/* Quick Questions Pills */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 1.1 }}
+          className="max-w-5xl mx-auto mb-12"
+        >
+          <div className="flex flex-wrap justify-center gap-3">
+            {[
+              "Need a custom chatbot?",
+              "Is React.js suitable for large-scale apps?",
+              "Understanding AI agent capabilities",
+              "Optimizing web performance",
+              "Server-side rendering (SSR)",
+              "What is the development process?",
+              "Post-launch support options",
+              "Mobile-first design strategies",
+              "Migrating to Next.js",
+              "User experience (UX) best practices",
+              "Accessibility in web applications",
+              "ROI of AI-powered solutions",
+            ].map((question, index) => (
+              <motion.button
+                key={index}
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.2 + index * 0.05 }}
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => {
+                  const chatButton = document.querySelector('button[aria-label="Open chat"]') as HTMLElement;
+                  if (chatButton) chatButton.click();
+                  setTimeout(() => {
+                    const chatInput = document.querySelector('input[placeholder*="Ask anything"]') as HTMLInputElement;
+                    if (chatInput) {
+                      chatInput.focus();
+                      chatInput.value = question;
+                    }
+                  }, 300);
+                }}
+                className="px-5 py-2.5 bg-gray-900/90 dark:bg-gray-800/90 text-gray-200 dark:text-gray-300 rounded-full text-sm font-medium hover:bg-marrsgreen dark:hover:bg-carrigreen hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl cursor-pointer backdrop-blur-sm border border-gray-700/50 dark:border-gray-600/50"
+              >
+                {question}
+              </motion.button>
+            ))}
+          </div>
         </motion.div>
 
         {/* Stats Grid - Enhanced */}

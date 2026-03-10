@@ -1,4 +1,4 @@
-# .claude Directory
+![alt text](<Screenshot 2026-03-01 055450.png>) ![alt text](<Screenshot 2026-03-01 055405.png>)# .claude Directory
 
 This directory contains Claude Code CLI configuration and memory for this project.
 

@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import SocialLinks from "@/components/SocialLinks";
 import SkipToMain from "@/components/SkipToMain";
 import Loader from "@/components/Loader";
+import AIChatBot from "@/components/AIChatBot";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -63,8 +64,8 @@ export default function RootLayout({
       >
         <ThemeProvider
           attribute="class"
-          defaultTheme="system"
-          enableSystem
+          defaultTheme="dark"
+          enableSystem={false}
           disableTransitionOnChange
         >
           <Loader>Ramesha.dev</Loader>
@@ -75,12 +76,13 @@ export default function RootLayout({
               <SkipToMain />
               <Header />
               <ProvideSection>
-                <main id="main">
+                <main id="main" className="relative">
                   {children}
                 </main>
               </ProvideSection>
               <SocialLinks page="index" />
               <Footer />
+              <AIChatBot />
             </div>
           </div>
         </ThemeProvider>

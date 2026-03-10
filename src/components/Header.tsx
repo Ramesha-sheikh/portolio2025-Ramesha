@@ -73,8 +73,8 @@ const Header: React.FC = () => {
         ref={mainRef}
         className={`main-nav z-50 top-0 fixed transition-all duration-500 w-full ${
           isScrolled
-            ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl shadow-xl border-b border-gray-200/50 dark:border-gray-800/50"
-            : "bg-white/60 dark:bg-gray-900/60 backdrop-blur-md"
+            ? "bg-white/80 dark:bg-[#0a3d3d]/90 backdrop-blur-xl shadow-xl border-b border-gray-200/50 dark:border-emerald-500/20"
+            : "bg-white/60 dark:bg-[#0a3d3d]/80 backdrop-blur-md"
         } ${navClassList.join(" ")}`}
       >
         <div className="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -87,7 +87,7 @@ const Header: React.FC = () => {
               <motion.div
                 whileHover={{ rotate: 360, scale: 1.1 }}
                 transition={{ duration: 0.6 }}
-                className="w-12 h-12 bg-gradient-to-br from-marrsgreen to-marrsgreen/70 dark:from-carrigreen dark:to-carrigreen/70 rounded-xl flex items-center justify-center text-white text-xl shadow-lg"
+                className="w-12 h-12 bg-gradient-to-br from-emerald-500 to-emerald-600 dark:from-emerald-500 dark:to-emerald-600 rounded-xl flex items-center justify-center text-white text-xl shadow-lg shadow-emerald-500/30"
               >
                 🤖
               </motion.div>
@@ -95,7 +95,7 @@ const Header: React.FC = () => {
                 <span className="bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">
                   Ramesha
                 </span>
-                <span className="text-marrsgreen dark:text-carrigreen">.ai</span>
+                <span className="text-emerald-500 dark:text-emerald-400">.ai</span>
               </div>
             </Link>
 
@@ -114,13 +114,13 @@ const Header: React.FC = () => {
                       href={navLink.url}
                       className={`group relative px-5 py-2.5 rounded-xl font-medium text-sm transition-all duration-300 flex items-center gap-2 ${
                         isActive
-                          ? "bg-gradient-to-r from-marrsgreen to-marrsgreen/80 dark:from-carrigreen dark:to-carrigreen/80 text-white shadow-lg shadow-marrsgreen/30 dark:shadow-carrigreen/30"
+                          ? "bg-gradient-to-r from-emerald-500 to-emerald-600 dark:from-emerald-500 dark:to-emerald-600 text-white shadow-lg shadow-emerald-500/30"
                           : "text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800"
                       }`}
                     >
                       <span>{navLink.text}</span>
                       {!isActive && (
-                        <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-marrsgreen/10 to-transparent dark:from-carrigreen/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                        <span className="absolute inset-0 rounded-xl bg-gradient-to-r from-emerald-500/10 to-transparent dark:from-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       )}
                     </Link>
                   </motion.div>
@@ -147,7 +147,7 @@ const Header: React.FC = () => {
               whileTap={{ scale: 0.95 }}
               className={`relative w-12 h-12 rounded-xl flex justify-center items-center transition-all duration-300 ${
                 isScrolled
-                  ? "bg-gradient-to-br from-marrsgreen/10 to-marrsgreen/5 dark:from-carrigreen/10 dark:to-carrigreen/5 border border-marrsgreen/20 dark:border-carrigreen/20"
+                  ? "bg-gradient-to-br from-emerald-500/10 to-emerald-500/5 dark:from-emerald-500/10 dark:to-emerald-500/5 border border-emerald-500/20 dark:border-emerald-500/20"
                   : "bg-gray-100 dark:bg-gray-800"
               } hover:shadow-lg`}
             >
@@ -187,7 +187,7 @@ const Header: React.FC = () => {
               initial={{ y: 100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ delay: 0.5 }}
-              className="bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200/50 dark:border-gray-800/50 p-2"
+              className="bg-white/90 dark:bg-[#0a3d3d]/90 backdrop-blur-xl rounded-2xl shadow-2xl border border-gray-200/50 dark:border-emerald-500/20 p-2"
             >
               <ul className="flex justify-around items-center">
                 {workDropdownItems.map((navLink) => {

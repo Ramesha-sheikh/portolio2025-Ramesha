@@ -35,7 +35,9 @@ const ProjectSection: React.FC = () => {
   const [visibleCount, setVisibleCount] = useState<number>(6);
 
   useEffect(() => {
-    projectSection && onSectionChange!("projects");
+    if (projectSection && onSectionChange) {
+      onSectionChange("projects");
+    }
   }, [onSectionChange, projectSection]);
 
   const categories = ["All", "Agentic AI", "RAG Systems", "Medical AI", "Full-Stack"];
@@ -56,7 +58,7 @@ const ProjectSection: React.FC = () => {
       {/* Animated Background Elements */}
       <div className="absolute inset-0 -z-10">
         <div className="absolute top-20 left-10 w-72 h-72 bg-marrsgreen/5 dark:bg-carrigreen/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/5 dark:bg-blue-500/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-marrsgreen/5 dark:bg-carrigreen/5 rounded-full blur-3xl" />
       </div>
 
       {/* Section Header */}
@@ -192,7 +194,7 @@ const projects = [
     title: "VisionDX AI - Medical Imaging Platform",
     type: "Medical AI",
     image: (
-      <div className="w-full h-full bg-gradient-to-br from-blue-500 via-purple-500 to-pink-500 flex items-center justify-center">
+      <div className="w-full h-full bg-gradient-to-br from-emerald-500 via-teal-500 to-green-500 flex items-center justify-center">
         <div className="text-white text-center p-6">
           <svg className="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
             <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12zm-1-5h2v2H9v-2zm0-6h2v4H9V5z"/>
@@ -205,7 +207,7 @@ const projects = [
     tags: ["AI Vision", "Medical AI", "Python", "FastAPI", "Gemini API", "Production"],
     liveUrl: "#",
     codeUrl: "#",
-    bgColor: "bg-gradient-to-br from-blue-500 to-purple-600",
+    bgColor: "bg-gradient-to-br from-emerald-500 to-teal-600",
   },
   {
     title: "AI-Native Autonomous Agent Suite",
@@ -250,7 +252,7 @@ const projects = [
     title: "Physical AI Textbook with RAG Chatbot",
     type: "RAG Systems",
     image: (
-      <div className="w-full h-full bg-gradient-to-br from-violet-500 via-purple-500 to-indigo-500 flex items-center justify-center">
+      <div className="w-full h-full bg-gradient-to-br from-emerald-500 via-teal-500 to-cyan-500 flex items-center justify-center">
         <div className="text-white text-center p-6">
           <svg className="w-16 h-16 mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20">
             <path d="M9 4.804A7.968 7.968 0 005.5 4c-1.255 0-2.443.29-3.5.804v10A7.969 7.969 0 015.5 14c1.669 0 3.218.51 4.5 1.385A7.962 7.962 0 0114.5 14c1.255 0 2.443.29 3.5.804v-10A7.968 7.968 0 0014.5 4c-1.255 0-2.443.29-3.5.804V12a1 1 0 11-2 0V4.804z"/>
@@ -263,7 +265,7 @@ const projects = [
     tags: ["RAG", "Qdrant", "Vector DB", "Better Auth", "Docusaurus"],
     liveUrl: "#",
     codeUrl: "#",
-    bgColor: "bg-gradient-to-br from-violet-500 to-indigo-600",
+    bgColor: "bg-gradient-to-br from-emerald-500 to-teal-600",
   },
   {
     title: "E-Commerce Autonomous Chatbot",

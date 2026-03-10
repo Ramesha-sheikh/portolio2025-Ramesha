@@ -6,7 +6,6 @@ import { useTheme } from "next-themes";
 import { useSection } from "../context/section";
 import useOnScreen from "@/hooks/useOnScreen";
 import useScrollActive from "@/hooks/useScrollActive";
-import satNaing from "../../public/rmm.jpg";
 import GlowCard from "@/components/GlowCard";
 
 const AboutSection: React.FC = () => {
@@ -19,7 +18,7 @@ const AboutSection: React.FC = () => {
 
   useEffect(() => {
     if (onSectionChange) {
-      aboutSection ? onSectionChange("who am i?") : onSectionChange("");
+      onSectionChange(aboutSection ? "who am i?" : "");
     }
   }, [aboutSection, onSectionChange]);
 
@@ -68,10 +67,10 @@ const AboutSection: React.FC = () => {
         >
           {/* Profile Image with Glow */}
           <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-br from-marrsgreen/30 to-purple-500/30 dark:from-carrigreen/30 dark:to-blue-500/30 blur-3xl" />
+            <div className="absolute inset-0 bg-gradient-to-br from-marrsgreen/30 to-teal-500/30 dark:from-carrigreen/30 dark:to-teal-500/30 blur-3xl" />
             <GlowCard className="relative overflow-hidden">
               <Image
-                src={satNaing}
+                src="/rmm.jpg"
                 width={600}
                 height={600}
                 priority
@@ -153,7 +152,7 @@ const AboutSection: React.FC = () => {
           </div>
 
           {/* Tech Stack Highlight */}
-          <div className="bg-gradient-to-br from-marrsgreen/5 to-purple-500/5 dark:from-carrigreen/5 dark:to-blue-500/5 rounded-2xl p-6 border border-marrsgreen/10 dark:border-carrigreen/10">
+          <div className="bg-gradient-to-br from-marrsgreen/5 to-teal-500/5 dark:from-carrigreen/5 dark:to-teal-500/5 rounded-2xl p-6 border border-marrsgreen/10 dark:border-carrigreen/10">
             <h3 className="text-xl font-bold mb-4 text-gray-900 dark:text-white flex items-center gap-2">
               <span>🛠️</span> My Tech Arsenal
             </h3>

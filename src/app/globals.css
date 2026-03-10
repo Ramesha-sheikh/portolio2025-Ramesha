@@ -35,7 +35,7 @@
 
 @layer components {
   .section {
-    @apply py-11 md:pt-16 lg:pt-20 px-4 sm:px-8 md:px-20 max-w-6xl mx-auto lg:min-h-[768px];
+    @apply relative py-11 md:pt-16 lg:pt-20 px-4 sm:px-8 md:px-20 max-w-6xl mx-auto lg:min-h-[768px];
   }
   .section-heading {
     @apply text-2xl md:text-3xl xl:text-4xl inline-block my-6 font-medium;
@@ -72,10 +72,10 @@
 
   /* AI-Powered Glow Effects */
   .glow-green {
-    box-shadow: 0 0 20px rgba(5, 206, 145, 0.3), 0 0 40px rgba(5, 206, 145, 0.1);
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.3), 0 0 40px rgba(16, 185, 129, 0.1);
   }
   .glow-green-hover:hover {
-    box-shadow: 0 0 30px rgba(5, 206, 145, 0.5), 0 0 60px rgba(5, 206, 145, 0.2);
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.5), 0 0 60px rgba(16, 185, 129, 0.2);
     transition: all 0.3s ease;
   }
 
@@ -83,11 +83,11 @@
   .gradient-bg {
     background: linear-gradient(
       135deg,
-      #667eea 0%,
-      #764ba2 25%,
-      #f093fb 50%,
-      #4facfe 75%,
-      #00f2fe 100%
+      #059669 0%,
+      #10b981 25%,
+      #34d399 50%,
+      #059669 75%,
+      #047857 100%
     );
     background-size: 400% 400%;
     animation: gradient-shift 15s ease infinite;
@@ -101,8 +101,8 @@
 
   /* Text Glow */
   .text-glow {
-    text-shadow: 0 0 20px rgba(5, 206, 145, 0.5),
-                 0 0 40px rgba(5, 206, 145, 0.3);
+    text-shadow: 0 0 20px rgba(16, 185, 129, 0.5),
+                 0 0 40px rgba(16, 185, 129, 0.3);
   }
 
   /* Glass Card */
@@ -144,7 +144,7 @@
 
   /* Advanced Gradient Text */
   .gradient-text {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #4facfe 75%, #00f2fe 100%);
+    background: linear-gradient(135deg, #059669 0%, #10b981 25%, #34d399 50%, #059669 75%, #047857 100%);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -153,7 +153,7 @@
   }
 
   .gradient-text-green {
-    background: linear-gradient(135deg, rgb(0, 122, 122) 0%, rgb(5, 206, 145) 50%, rgb(0, 200, 150) 100%);
+    background: linear-gradient(135deg, rgb(4, 120, 87) 0%, rgb(16, 185, 129) 50%, rgb(52, 211, 153) 100%);
     background-size: 200% 200%;
     -webkit-background-clip: text;
     background-clip: text;
@@ -163,8 +163,8 @@
 
   /* Soft Glow Background */
   .soft-glow-bg {
-    background: radial-gradient(ellipse at top, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
-                radial-gradient(ellipse at bottom, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+    background: radial-gradient(ellipse at top, rgba(16, 185, 129, 0.1) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom, rgba(52, 211, 153, 0.1) 0%, transparent 50%);
   }
 
   /* Shimmer Effect */
@@ -213,7 +213,7 @@
   .neon-border {
     position: relative;
     border: 2px solid transparent;
-    background: linear-gradient(to right, #667eea, #764ba2, #f093fb) border-box;
+    background: linear-gradient(to right, #059669, #10b981, #34d399) border-box;
     -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -224,16 +224,164 @@
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
   }
+
+  /* ===== New UI Update Styles ===== */
+  
+  /* Tech Stack Icon Row */
+  .tech-stack-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    opacity: 0.2;
+  }
+
+  /* Section Divider with Icon */
+  .section-divider {
+    width: 96px;
+    height: 4px;
+    background: linear-gradient(to right, rgb(16, 185, 129), transparent);
+    margin: 1.5rem auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Card Scale Featured */
+  .card-featured {
+    margin-top: -2rem;
+    margin-bottom: 2rem;
+  }
+
+  /* Badge Pill */
+  .badge-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    background: rgba(16, 185, 129, 0.1);
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    color: rgb(16, 185, 129);
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  /* Gradient Text Large */
+  .gradient-text-large {
+    font-size: clamp(3rem, 8vw, 6rem);
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  /* FAQ Accordion */
+  .faq-accordion {
+    background: rgba(31, 41, 55, 0.3);
+    border: 1px solid rgba(75, 85, 99, 0.5);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+  }
+
+  .faq-accordion:hover {
+    border-color: rgba(59, 130, 246, 0.2);
+  }
+
+  .faq-accordion.active {
+    background: rgba(31, 41, 55, 0.8);
+    border-color: rgba(59, 130, 246, 0.3);
+  }
+
+  /* CTA Stats */
+  .cta-stat {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .cta-stat-icon {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    background: rgba(16, 185, 129, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(16, 185, 129);
+  }
+
+  /* Button Explore */
+  .btn-explore {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(to right, rgb(16, 185, 129), rgb(4, 120, 87));
+    color: white;
+    border-radius: 0.75rem;
+    font-weight: 700;
+    font-size: 0.875rem;
+    transition: all 0.3s ease;
+  }
+
+  .btn-explore:hover {
+    box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+    transform: translateY(-2px);
+  }
+
+  /* Scroll Indicator Animation */
+  @keyframes scroll-indicator {
+    0%, 100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    50% {
+      opacity: 0.5;
+      transform: translateY(-10px);
+    }
+  }
+
+  .scroll-indicator {
+    animation: scroll-indicator 2s ease-in-out infinite;
+  }
+
+  /* Icon Pulse */
+  @keyframes icon-pulse {
+    0%, 100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+  }
+
+  .icon-pulse {
+    animation: icon-pulse 3s ease-in-out infinite;
+  }
+
+  /* Typing Cursor Blink Animation */
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  .animate-blink {
+    animation: blink 0.8s step-end infinite;
+  }
 }
 
 .swiper-pagination-bullet {
   @apply dark:bg-gray-200;
 }
 .dark .swiper-pagination-bullet-active {
-  background-color: rgb(5 206 145) !important;
+  background-color: rgb(16 185 129) !important; /* Emerald Green */
 }
 .swiper-pagination-bullet-active {
-  background-color: rgb(0 140 140) !important;
+  background-color: rgb(16 185 129) !important; /* Emerald Green */
 }
 
 .swiper-button-prev,
@@ -242,7 +390,7 @@
 }
 .swiper-button-prev,
 .swiper-button-next {
-  color: rgb(0 140 140) !important;
+  color: rgb(16 185 129) !important; /* Emerald Green */
 }
 @media only screen and (max-width: 480px) {
   .swiper-button-prev,

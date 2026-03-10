@@ -2,7 +2,6 @@
 import { useRef, useState } from "react";
 import type { ReactElement } from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import Image from "next/image";
 
 interface ProjectCardProps {
   project: {
@@ -160,7 +159,7 @@ const ProjectCardNew: React.FC<ProjectCardProps> = ({ project, index }) => {
         </div>
 
         {/* Floating Corner Decoration */}
-        <div className="absolute -top-2 -right-2 w-24 h-24 bg-gradient-to-br from-marrsgreen/20 to-purple-500/20 dark:from-carrigreen/20 dark:to-blue-500/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+        <div className="absolute -top-2 -right-2 w-24 h-24 bg-gradient-to-br from-marrsgreen/20 to-teal-500/20 dark:from-carrigreen/20 dark:to-teal-500/20 rounded-full blur-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       </div>
     </motion.div>
   );
